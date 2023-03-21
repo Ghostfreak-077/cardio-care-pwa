@@ -1,0 +1,25 @@
+.hero{
+    height: 100vh;
+    .image{
+        height: 50%;
+        display: flex;
+        background-image: url('../../../public/images/hero_background.webp');
+        background-size: cover;
+        .logo{
+            width: 70%;
+            margin: auto;
+        }
+    }
+    .emergency{
+        height: 45%;
+        display: flex;
+        .btn{
+            width: 12rem;
+            height: 12rem;
+            background: red;
+            border-radius: 50%;
+            margin: auto;
+            transform: translateY(-20%);
+        }
+    }
+}

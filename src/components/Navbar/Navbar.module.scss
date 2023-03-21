@@ -1,0 +1,28 @@
+.navbar{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 5rem;
+    background: linear-gradient(to bottom, #66F14E, #187900);
+    display: flex;
+    padding-bottom: 1rem;
+    ul{
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+        list-style: none;
+        width: 100%;
+        margin: auto;
+        font-size: 1.8rem;
+        li{
+            margin: auto;
+            a{
+                color: rgb(198, 198, 198);
+            }
+        }
+        .sel a svg{
+            color: white;
+            filter: drop-shadow(0px 0px 0.8rem white);
+        }
+    }
+}
