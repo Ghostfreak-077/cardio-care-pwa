@@ -9,6 +9,7 @@ function App() {
 
   return (
     <div className="App">
+    <div className="panel"></div>
     <BrowserRouter>
       {/* <Home/> */}
       <Navbar/>
