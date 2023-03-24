@@ -1,0 +1,42 @@
+.profile {
+    .heading {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 24px;
+        /* identical to box height */
+
+        letter-spacing: 0.015em;
+
+        color: rgba(0, 0, 0, 0.87);
+        text-align: left;
+        padding-left: 3vh;
+    }
+
+    .user{
+        display: inline-flex;
+    }
+
+    .userimg{
+        
+        margin-left: -20vh;
+        
+    }
+    
+    .userdetail{
+        margin-top: 2vh;
+        margin-left: 1vh;
+
+    }
+
+    .biodata{
+        margin-top: 20vh;
+        display: inline-flex;
+    }
+
+    .height{
+        margin-left: -25vh;
+    }
+
+}
