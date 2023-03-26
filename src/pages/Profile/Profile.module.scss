@@ -1,4 +1,4 @@
-.profile {
+
     .heading {
         font-family: 'Poppins';
         font-style: normal;
@@ -14,29 +14,29 @@
         padding-left: 3vh;
     }
 
-    .user{
+    .user {
         display: inline-flex;
     }
 
-    .userimg{
-        
+    .userimg {
+
         margin-left: -20vh;
-        
+
     }
-    
-    .userdetail{
+
+    .userdetail {
         margin-top: 2vh;
         margin-left: 1vh;
 
     }
 
-    .biodata{
-        margin-top: 20vh;
-        display: inline-flex;
-    }
 
-    .height{
-        margin-left: -25vh;
-    }
-
+.biodata {
+    margin-top: 10vh;
+    display: inline-flex;
 }
+
+.height {
+    margin-left: -25vh;
+}
+

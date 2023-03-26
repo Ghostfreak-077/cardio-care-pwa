@@ -18,7 +18,7 @@ const Profile = () => {
         <div className={styles.biodata}>
         <img src="/images/height.webp" alt="" className={styles.height} />
         <p>58 kg</p>
-        <img src="/images/weight.webp" alt="" className={styles.weight} />
+        {/* <img src="/images/weight.webp" alt="" className={styles.weight} /> */}
 
             
         </div>
