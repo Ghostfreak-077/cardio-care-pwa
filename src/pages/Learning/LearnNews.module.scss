@@ -1,0 +1,18 @@
+.learnnews{
+  padding: 5% 0;
+}
+.newsContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  .news{
+    margin: 0 2%;
+    padding: 4% 2%;
+    color: black;
+    background-color: #FFE9E9;
+    border-radius: 2rem;
+  }
+}
+.extension{
+         height: 6rem;
+}

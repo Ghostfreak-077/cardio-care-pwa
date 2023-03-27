@@ -27,7 +27,6 @@ const Profile = () => {
         <button className={styles.editimg}></button>
       </div>
       <div className={styles.healthdata}>
-        <div className={styles.iconcolumn}>
           <div className={styles.info}>
             <img src="/images/height.webp" alt="" className={styles.icon} />
             <p>172 cm</p>
@@ -36,17 +35,10 @@ const Profile = () => {
             <img src="/images/weight.webp" alt="" className={styles.icon} />
             <p>58 kg</p>
           </div>
-        </div>
-        <div className={styles.iconcolumn}>
           <div className={styles.info}>
             <img src="/images/BMI.png" alt="" className={styles.icon} />
             <p>18.5</p>
           </div>
-          <div className={styles.info}>
-            <img src="/images/water.png" alt="" className={styles.icon} />
-            <p>7.6 litres</p>
-          </div>
-        </div>
       </div>
       <ProfileContact />
       <div className={styles.profileButtons}>

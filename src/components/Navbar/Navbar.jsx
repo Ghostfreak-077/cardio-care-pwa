@@ -14,7 +14,7 @@ const Navbar = () => {
       <ul>
         <li className={location === '/'?styles.sel:''}><Link to='/'><FiHome/></Link></li>
         {/* <li className={location === '/analysis'?styles.sel:''}><Link to='analysis'><AiOutlineLineChart/></Link></li> */}
-        <li className={location === '/learn'?styles.sel:''}><Link to='/learn'><CgNotes/></Link></li>
+        <li className={location === '/LearnNews'?styles.sel:''}><Link to='/LearnNews'><CgNotes/></Link></li>
         <li className={location === '/dashboard'?styles.sel:''}><Link to='/dashboard'><CgProfile/></Link></li>
       </ul>
     </div>

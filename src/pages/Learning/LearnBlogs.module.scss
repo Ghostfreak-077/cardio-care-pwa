@@ -1,0 +1,16 @@
+.learnblogs{
+    padding: 5% 0;
+.blogContainer{
+  display: flex;
+  flex-direction: column;
+  .blog{
+    margin-bottom: 4%;
+    padding: 10% 6%;
+    color: black;
+    background-color: #fae8e8;
+  }
+}
+.extension{
+         height: 6rem;
+}
+}
