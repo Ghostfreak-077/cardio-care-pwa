@@ -53,6 +53,10 @@ const Profile = () => {
         <button className={styles.password}>Change Password</button>
         <button className={styles.logout}> Log out</button>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };
