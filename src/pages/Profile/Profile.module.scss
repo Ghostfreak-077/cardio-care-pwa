@@ -67,27 +67,23 @@
         }
     }
     .healthdata{
-        padding: 2% 5% 3% 5%;
+        padding: 6% 5% 6% 5%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: flex-start;
-        gap:10%;
-        .iconcolumn{
-            display: flex;
-            flex-direction: column;
+        justify-content: center;
+        gap: 5%;
             .info{
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: 1rem;
+                gap: 0.3rem;
                 .icon{
-                    width: 3.5rem;
-                    height: 3.5rem;
+                    width: 3rem;
+                    height: 3rem;
                 }
             }
-        }
     }
     .profileButtons{
         padding: 0% 10%;
@@ -103,3 +99,7 @@
         border-style: none;
         border-radius: 1.5rem;
     }
+<<<<<<< HEAD
+=======
+// }
+>>>>>>> 7b5cd30c608f0b9421517a30c6dbc730c27a7679
