@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import data from "./data.json"
 import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from "chart.js";
 import { Line } from 'react-chartjs-2';
+import styles from './Analysis.module.scss';
+
 
 
 ChartJS.register(
@@ -41,19 +43,22 @@ const DataAnalysis = () => {
   }, [])
   
   return (
-    <div className="App">
+    <div className={styles.analysis}>
       <div className='chart'>
-        {
+      {
           chartData && chartData?.datasets && (
             <Line 
               options={ {
-                  responsive: true,
+                  // responsive: true,
+                  aspectRatio: 1.4,
+                  // height: '10vh',
                   plugins: {
                     legend: {
-                      position: 'top',
+                      display:false,
+                      // position: 'top',
                     },
                     title: {
-                      display: true,
+                      display: false,
                       text: 'SPO2 vs TIME',
                     },
                   },
