@@ -1,0 +1,10 @@
+.analysis{
+    width: 80%;
+    margin: auto;
+    overflow: scroll;
+    canvas{
+        height: 30vh !important;
+        width: auto !important;
+        // aspect-ratio: 1.4;
+    }
+}
