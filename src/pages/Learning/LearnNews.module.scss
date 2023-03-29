@@ -1,16 +1,17 @@
 .learnnews{
-  padding: 5% 0;
+  padding: 1% 0;
 }
 .newsContainer{
   display: flex;
   flex-direction: column;
   padding: 2%;
   .news{
-    margin: 0 2%;
-    padding: 4% 2%;
+    margin-bottom: 1%;
+    padding: 8% 4%;
     color: black;
     background-color: #FFE9E9;
     border-radius: 2rem;
+    font-size: 1.2rem;
   }
 }
 .extension{
