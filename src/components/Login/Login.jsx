@@ -1,26 +1,27 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+// import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import { auth } from "../../firebase";
+// import { auth } from "../../firebase";
+import styles from "./Login.module.scss";
 
-const SignIn = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // signInWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
+    //     console.log(userCredential);
+    //   })
+      // .catch((error) => {
+      //   console.log(error);
+      // });
   };
 
   return (
-    <div className="sign-in-container">
+    <div className={styles.Logincontainer}>
       <form onSubmit={signIn}>
-        <h1>Log In to your Account</h1>
+        <h2>Log In to your Account</h2>
         <input
           type="email"
           placeholder="Enter your email"
@@ -39,4 +40,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;

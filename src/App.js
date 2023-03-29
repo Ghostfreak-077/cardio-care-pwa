@@ -5,6 +5,7 @@ import Profile from './pages/Profile/Profile';
 // import Learning from './pages/Learning/Learning';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import Login from './components/Login/Login';
 import LearnNews from './pages/Learning/LearnNews';
 import LearnBlogs from './pages/Learning/LearnBlogs';
 import LearnVideos from './pages/Learning/LearnVideos';
@@ -21,8 +22,8 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />}/>
-        {/* <Route path="/login" element={<Login />}/>
-        <Route path="/dashboard" element={<Signup />}/> */}
+        <Route path="/login" element={<Login />}/>
+        {/* <Route path="/dashboard" element={<Signup />}/> */}
         <Route path="/dashboard" element={<Profile/>}/>
         <Route path="/LearnNews" element={<LearnNews/>}/>
         <Route path="/LearnBlogs" element={<LearnBlogs/>}/>
