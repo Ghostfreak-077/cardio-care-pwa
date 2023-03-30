@@ -10,6 +10,16 @@
 .extension{
          height: 6rem;
 }
+
+.iframewrap{
+    width: 75%;
+    margin: 3rem auto;
+    .content{
+        margin: 0.5rem auto;
+        font-size: 0.9rem;
+        text-align: left;
+    }
+}
 //   .video-container {
 //     display: flex;
 //     flex-direction: column;

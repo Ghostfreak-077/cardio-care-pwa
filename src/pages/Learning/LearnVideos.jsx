@@ -7,69 +7,69 @@ const LearnVideos = () => {
     <div className={styles.learnvideos}>
       <LearnButtons />
       <div class="video-container">
-        <div class="iframewrap">
-          <h3 className={styles.content}>
-            The recent spate deaths in India due to heart diseases has raised
-            concerns.
-          </h3>
+        <div class={styles.iframewrap}>
           <iframe
             title="5 health tips"
             src="https://www.youtube.com/embed/cW-vmmHgMOM"
             frameBorder="0"
             allowFullScreen
           ></iframe>
-        </div>
-
-        <div className={styles.iframewrap}>
           <h3 className={styles.content}>
             The recent spate deaths in India due to heart diseases has raised
             concerns.
           </h3>
+        </div>
+
+        <div className={styles.iframewrap}>
           <iframe
             title="5 health tips"
             src="https://www.youtube.com/embed/cW-vmmHgMOM"
             frameborder="0"
             allowfullscreen
           ></iframe>
-        </div>
-
-        <div class="iframewrap">
           <h3 className={styles.content}>
             The recent spate deaths in India due to heart diseases has raised
             concerns.
           </h3>
+        </div>
+
+        <div class={styles.iframewrap}>
           <iframe
             title="5 health tips"
             src="https://www.youtube.com/embed/cW-vmmHgMOM"
             frameBorder="0"
             allowFullScreen
           ></iframe>
-        </div>
-
-        <div class="iframewrap">
           <h3 className={styles.content}>
             The recent spate deaths in India due to heart diseases has raised
             concerns.
           </h3>
+        </div>
+
+        <div class={styles.iframewrap}>
           <iframe
             title="5 health tips"
             src="https://www.youtube.com/embed/cW-vmmHgMOM"
             frameBorder="0"
             allowFullScreen
           ></iframe>
-        </div>
-
-        <div class="iframewrap">
           <h3 className={styles.content}>
             The recent spate deaths in India due to heart diseases has raised
             concerns.
           </h3>
+        </div>
+
+        <div class={styles.iframewrap}>
           <iframe
             title="5 health tips"
             src="https://www.youtube.com/embed/cW-vmmHgMOM"
             frameBorder="0"
             allowFullScreen
           ></iframe>
+          <h3 className={styles.content}>
+            The recent spate deaths in India due to heart diseases has raised
+            concerns.
+          </h3>
         </div>
       </div>
       <div className={styles.extension}></div>
