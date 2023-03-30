@@ -1,21 +1,22 @@
-// import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-// import { auth } from "../../firebase";
+import { auth } from "../../firebase";
 import styles from "./Login.module.scss";
 
-const Login = () => {
+const Login = ({setLogged}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = (e) => {
     e.preventDefault();
-    // signInWithEmailAndPassword(auth, email, password)
-    //   .then((userCredential) => {
-    //     console.log(userCredential);
-    //   })
-      // .catch((error) => {
-      //   console.log(error);
-      // });
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+        setLogged(userCredential?true:false)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -34,7 +35,7 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button type="submit">Log In</button>
+        <button type="submit" onClick={signIn}>Log In</button>
       </form>
     </div>
   );

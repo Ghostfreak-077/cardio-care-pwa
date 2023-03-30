@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
@@ -17,26 +17,31 @@ import ApiTest from './components/Signup/ApiTest';
 
 function App() {
 
+  const [logged, setLogged] = useState(false)
+
   return (
     <div className="App">
-    <div className="panel"></div>
-    {/* <Notifications/> */}
-    <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/login" element={<Login />}/>
-        {/* <Route path="/dashboard" element={<ApiTest />}/> */}
-        <Route path="/dashboard" element={<Profile/>}/>
-        {/* <Route path="/dashboard" element={<Signup />}/> */}
-        <Route path="/dashboard" element={<Profile/>}/>
-        <Route path="/LearnNews" element={<LearnNews/>}/>
-        <Route path="/LearnBlogs" element={<LearnBlogs/>}/>
-        <Route path="/LearnVideos" element={<LearnVideos/>}/>
-      </Routes>
+      <div className="panel"></div>
+      {/* <Notifications/> */}
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          {logged ? <>
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/dashboard" element={<ApiTest />}/> */}
+            <Route path="/dashboard" element={<Profile setLogged={setLogged} />} />
+            {/* <Route path="/dashboard" element={<Signup />}/> */}
+            {/* <Route path="/dashboard" element={<Profile />} /> */}
+            <Route path="/LearnNews" element={<LearnNews />} />
+            <Route path="/LearnBlogs" element={<LearnBlogs />} />
+            <Route path="/LearnVideos" element={<LearnVideos />} />
+          </> :
+            <Route path="/*" element={<Login setLogged={setLogged} />} />
+          }
+        </Routes>
 
 
-    </BrowserRouter>
+      </BrowserRouter>
     </div>
   );
 }

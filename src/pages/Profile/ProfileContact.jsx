@@ -8,19 +8,19 @@ const ProfileContact = () => {
         <legend>Emergency Credentials</legend>
           <div className={styles.Details}>
             <p>Email</p>
-            <div className={styles.p}>User@gmail.com</div>
+            <div className={styles.p}>parthaverse@gmail.com</div>
             <hr></hr>
           </div>
           <div className={styles.Details}>
             <p>Emergency Contact</p>
-            <div className={styles.p}>9876543210</div>
+            <div className={styles.p}>9707577970</div>
             <hr></hr>
           </div>
-          <div className={styles.Details}>
+          {/* <div className={styles.Details}>
             <p>Emergency Contact</p>
             <div className={styles.p}>9876543210</div>
             <hr></hr>
-          </div>
+          </div> */}
       </fieldset>
     </form>
   );
