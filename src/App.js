@@ -7,7 +7,6 @@ import Signup from './components/Signup/Signup';
 // import Learning from './pages/Learning/Learning';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-// import Login from './components/Login/Login';
 import LearnNews from './pages/Learning/LearnNews';
 import LearnBlogs from './pages/Learning/LearnBlogs';
 import LearnVideos from './pages/Learning/LearnVideos';

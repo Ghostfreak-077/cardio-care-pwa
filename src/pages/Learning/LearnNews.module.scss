@@ -1,19 +1,41 @@
 .learnnews{
-  padding: 1% 0;
+  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+  width: 100%;
 }
 .newsContainer{
   display: flex;
   flex-direction: column;
-  padding: 2%;
+  padding: 5%;
+  border-color: #050000;
+  border: 5rem;
+  margin-bottom: 4rem;
+  
   .news{
     font-weight: 600;
-    margin-bottom: 1%;
+    
     padding: 8% 4%;
     color: black;
     background-color: #FFE9E9;
     border-radius: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
+  
+  .newsT{
+    font-weight: 600;
+    font-size: 1rem;
+    color: #050000;
+    text-align: left;
+    
+  }
+  .newsD{
+    font-weight: 500;
+    font-size: 1rem;
+    color: #050000;
+    text-align: left;
+
+  }
+  
 }
 .extension{
          height: 6rem;
