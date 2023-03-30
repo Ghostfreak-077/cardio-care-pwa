@@ -1,17 +1,31 @@
-.learnblogs{
-    padding: 1% 0;
-.blogContainer{
-  display: flex;
-  flex-direction: column;
-  .blog{
-    margin-bottom: 1%;
-    padding: 8% 4%;
-    color: black;
-    background-color: #fae8e8;
-    font-size: 1.2rem;
+.learnblogs {
+  padding: 1% 0;
+
+  .blogContainer {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.2rem;
+    margin-bottom:1rem ;
+   
+    
+
+    .blog {
+      margin-bottom: 1%;
+      padding: 8% 4%;
+      color: black;
+      background-color: #fae8e8;
+      font-size: 1.2rem;
+    }
+
   }
-}
-.extension{
-         height: 6rem;
-}
+
+  .blogImg {
+    margin: 5vh;
+    margin-left: 5vh;
+  }
+
+  .extension {
+    height: 6rem;
+  }
 }
