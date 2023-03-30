@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import data from "./data.json"
+import data from "./data2.json"
 import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from "chart.js";
 import { Line } from 'react-chartjs-2';
 import styles from './Analysis.module.scss';
@@ -23,24 +23,38 @@ const DataAnalysis = () => {
   const [chartData, setChartData] = useState({})
 
   useEffect(() => {
+    setInterval(async () => {
 
-    setTimeout(() => {
+      data.push({
+        "second": new Date().getSeconds().toString(),
+        "time": new Date().getHours().toString() + ":" + new Date().getMinutes().toString(),
+        "br": (Math.round(((Math.random() * 2) + 95) * 100) / 100)
+      })
+
+      // fs.writeFile('./data.json', JSON.stringify(data))
+
+      console.log(data[data.length - 1]);
+
       setChartData({
-        labels: data.map(item => item.ngay_mua),
+        labels: [...data.slice(data.length - 61, data.length - 1),data[data.length-1]].map((item) => item.second),
         datasets: [
           {
             label: '',
-            data: data.map((item) => item.trigia),
+            data: [...data.slice(data.length - 61, data.length - 1), {
+              "second": new Date().getSeconds().toString(),
+              "time": new Date().getHours().toString() + ":" + new Date().getMinutes().toString(),
+              "br": 60
+            }].map((item) => item.br),
             fill: false,
-            // type: 'line',
             borderColor: 'rgb(255, 99, 132)',
-            tension : 0
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
           },
         ],
       })
     }, 1000)
 
   }, [])
+
   
   return (
     <div className={styles.analysis}>

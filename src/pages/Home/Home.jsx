@@ -8,11 +8,13 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Hero/>
+      <h1>Pulse Rate</h1>
       <DataAnalysis/>
       <br/>
       <br/>
       <br/>
       <br/>
+      <h1>Oxygen Level</h1>
       <DataAnalysis2/>
       <br/>
       <br/>
