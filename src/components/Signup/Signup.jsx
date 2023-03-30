@@ -1,14 +1,44 @@
-// import React, { useRef, useState } from 'react'
-// import { Form } from 'react-router-dom'
-// import styles from './Signup.module.scss'
-// import addNotification from 'react-push-notification'
-// import YouTube from 'react-youtube'
-// import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
-// import { auth } from '../../firebase';
+import React, { useEffect, useRef, useState } from 'react'
+import { Form } from 'react-router-dom'
+import styles from './Signup.module.scss'
+import addNotification from 'react-push-notification'
+import YouTube from 'react-youtube'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../../firebase';
+import axios from 'axios'
 
-// const Signup = () => {
-//   const [email, setEmail] = useState("")
-//   const [password, setPassword] = useState("")
+const Signup = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [Data, setData] = useState("")
+
+  // fetch(`http://192.168.90.215:80/`)
+
+  // useEffect(()=>{
+    // })
+    
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(
+            "http://192.168.90.215:80"
+          );
+          setData(response.data.articles);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      fetchData();
+    });
+
+  //   setInterval(async ()=>{
+  //       const res = await axios.get(`http://192.168.90.215:80`)
+        
+  //       // ((res)=>{
+  //       setData(res)
+  //       // })
+  // }, 1000)
+
 
   // firebase.auth().useEmulator('http://localhost:9099', { disableWarnings: true });
   // firebase.auth().onAuthStateChanged((user) => {
@@ -47,7 +77,7 @@
   //     });
   // }
 
-  // // below is a function handleSubmit to login using auth token in firebase
+  // below is a function handleSubmit to login using auth token in firebase
   // const handleSubmit = () => {
 
 
@@ -62,16 +92,17 @@
   //   });
   // };
 
-//   return (
-//     <div className={styles.signup}>
-//       <input type="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
-//       <input type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
-//       <button onClick={(e)=>signUp(e)}>Submit</button>
-//       <h1>{email}</h1>
-//       <h1>{password}</h1>
-//     </div>
-//   )
-// }
+  return (
+    <div className={styles.signup}>
+      {/* <input type="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
+      <input type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
+      <button onClick={(e)=>signUp(e)}>Submit</button>
+      <h1>{email}</h1>
+      <h1>{password}</h1> */}
+      <h1>{Data}</h1>
+    </div>
+  )
+}
 
 
-// export default Signup;
+export default Signup;
