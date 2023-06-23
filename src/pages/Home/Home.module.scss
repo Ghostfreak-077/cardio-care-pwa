@@ -1,3 +1,19 @@
-.home{
+.home {
     min-height: 100vh;
+
+    .nonHero {
+        box-shadow: -0.1rem -0.1rem 0.3rem rgb(187, 187, 187);
+    
+        .charts {
+            display: flex;
+            // flex-direction: column;
+
+            .pulse,
+            .oxy {
+                width: 25%;
+                margin: auto;
+
+            }
+        }
+    }
 }

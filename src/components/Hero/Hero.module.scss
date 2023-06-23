@@ -1,46 +1,119 @@
+.emergency {
+  height: 45%;
+  display: flex;
+  
+  .btn {
+    font-size: 1.5rem;
+    font-family: 'Poppins';
+    color: white;
+    width: 14rem;
+    height: 14rem;
+    background: #ff5757;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384),
+    inset 0px 4px 4px rgba(255, 255, 255, 0.37);
+    border-radius: 50%;
+    border-style: none;
+    margin: auto;
+    transform: translateY(-40%);
+    animation: emer forwards 1s ease-in-out infinite alternate;
+  }
+}
+
+.hero{
+  background: fixed;
+  background-image: url('../../../public/images/hero_background.webp');
+  background-size: cover;
+  // background-position: ;
+  position: relative;
+  .text{
+    position: absolute;
+    top: 40%;
+    left: 10rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align-last: left;
+    color: rgb(79, 79, 79);
+
+    .title{
+      font-size: 5rem;
+      // font-family: cursive !important;
+      color: #ff5757;
+    }
+  }
+}
+
+.connect {
+  font-size: 1.5rem;
+  font-family: 'Poppins';
+  border-radius: 1rem;
+  color: white;
+  width: 14rem;
+  height: 4rem;
+  background: #ff5757;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  inset 0px 4px 4px rgba(255, 255, 255, 0.37);
+  border-style: none;
+  margin: auto;
+  transform: translateY(-140%);
+}
+
+@media screen and (max-width: 768px) {
+
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+
+  
   .image {
     height: 50%;
     display: flex;
     flex-direction: column;
     background-image: url("../../../public/images/hero_background.webp");
     background-size: cover;
-    .connect{
-      font-size: 1.5rem;
-      font-family: 'Poppins';
-      border-radius: 1rem;
-      color: white;
-      width: 14rem;
-      height: 4rem;
-      background: #ff5757;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 4px rgba(255, 255, 255, 0.37);
-      border-style: none;
-      margin: auto;
-      transform: translateY(-140%);
-    }
+    
+    
     .logo {
       width: 80%;
       margin: auto;
     }
   }
-  .emergency {
-    height: 45%;
-    display: flex;
-    .btn {
-      font-size: 1.5rem;
-      font-family: 'Poppins';
-      color: white;
-      width: 14rem;
-      height: 14rem;
-      background: #ff5757;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 4px rgba(255, 255, 255, 0.37);
-      border-radius: 50%;
-      border-style: none;
-      margin: auto;
-      transform: translateY(-40%);
+  
+}
+}
+
+@media screen and (min-width: 768px) {
+  .hero{
+    min-height: 100vh;
+
+    .emergency .btn{
+      position: fixed;
+      width: 8rem;
+      height: 8rem;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+
+      .inner{
+        width: 5rem;
+        height: 5rem;
+        box-shadow: inset 0rem 0rem 0.5rem rgba(171, 58, 58, 0.3), 0rem 0rem 0.5rem rgba(243, 158, 158, 0.649);
+        border-radius: 50%;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.455);
+      }
     }
+  }
+}
+
+@keyframes emer {
+  100%{
+    transform: translateY(0.3rem);
+  }
+  0%{
+    transform: translateY(0rem);
   }
 }

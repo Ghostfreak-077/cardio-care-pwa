@@ -25,7 +25,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          {logged ? <>
+          {!logged ? <>
             <Route path="/" element={<Home />} />
             {/* <Route path="/dashboard" element={<ApiTest />}/> */}
             <Route path="/dashboard" element={<Profile setLogged={setLogged} />} />

@@ -32,19 +32,19 @@ const LearnNews = () => {
 
   return (
     <div className={styles.learnnews}>
-       <LearnButtons/>
-       {newsData.length > 0 ? (
-          newsData.map((article, index) => article.urlToImage?(
-            <div key={index} className={styles.newsContainer}>
-               <img className={styles.newsI} src={article.urlToImage} alt="" />
-              <div className={styles.newsT}>{article.title}</div>
-              <div className={styles.newsD}>{article.description}</div>
-             
-            </div>
-          ):'')
-        ) : (
-          <div>Loading news...</div>
-        )}
+      <LearnButtons />
+      {newsData.length > 0 ? (
+        newsData.map((article, index) => article.urlToImage ? (
+          <div key={index} className={styles.newsContainer}>
+            <img className={styles.newsI} src={article.urlToImage} alt="" />
+            <div className={styles.newsT}>{article.title}</div>
+            <div className={styles.newsD}>{article.description}</div>
+
+          </div>
+        ) : '')
+      ) : (
+        <div>Loading news...</div>
+      )}
       <div className={styles.extension}></div>
     </div>
   );
