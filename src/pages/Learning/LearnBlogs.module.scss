@@ -1,28 +1,39 @@
+// 
+
 .learnblogs {
-  padding: 1% 0;
+  padding: 5% 0;
+  margin: 5rem 0;
+  width: 100%;
+  padding: 0 10%;
 
   .blogContainer {
     display: flex;
     flex-direction: column;
-
     padding: 1.2rem;
-    margin-bottom:1rem ;
-   
-    
+    margin-bottom: 1rem;
 
     .blog {
       margin-bottom: 1%;
-      padding: 8% 4%;
+      padding: 2%;
       color: black;
       background-color: #fae8e8;
       font-size: 1.2rem;
-    }
+      border-radius: 1rem; // Added border-radius for rounded corners
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); // Added box-shadow for 3D effect
+      transition: transform 0.3s ease-in-out; // Added transition for hover effect
 
+      &:hover {
+        transform: translateY(-5px); // Slightly moves up on hover
+      }
+    }
   }
 
   .blogImg {
     margin: 5vh;
     margin-left: 5vh;
+    width: 50%; // Adjust the width of the image as needed
+    border-radius: 1rem; // Added border-radius for rounded corners
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Added shadow to the image
   }
 
   .extension {

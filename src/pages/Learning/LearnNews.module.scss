@@ -1,12 +1,15 @@
 .learnnews {
   margin: 5rem 0;
   width: 100%;
-  padding: 0 10%; // Added padding to the left and right
+  padding: 0 10%;
+
   h1 {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 2rem; // Updated font size for better visibility
     margin-bottom: 2rem;
-    font-weight: 700;
+    color: #0b0b0b;
+    text-transform: uppercase; // Added text transformation for a pronounced effect
+    animation: fadeInDown 1s ease-in-out; // Added animation for the title
   }
 }
 
@@ -15,39 +18,51 @@
   flex-direction: column;
   padding: 2rem;
   margin-bottom: 4rem;
-  border-radius: 1rem; // Added border-radius for rounded corners
-  background-color: #fff3f3; // Added background color
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); // Added box-shadow for 3D effect
-  transition: transform 0.3s ease-in-out; // Added transition for hover effect
+  border-radius: 1rem;
+  background-color: #f9f9f9; // Updated background color for consistency
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: slideUp 0.5s ease-in-out; // Added animation for the container
 
   &:hover {
-    transform: translateY(-5px); // Slightly moves up on hover
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
   }
 
   img {
     width: 100%;
     border-radius: 1rem;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Added shadow to the image
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; // Added transition for hover effect
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   .newsT {
     font-weight: 700;
-    font-size: 1.1rem;
-    color: #050000;
+    font-size: 1.5rem; // Updated font size for better readability
+    color: #333;
     text-align: left;
     margin-bottom: 1rem;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #20a02a;
+    }
   }
 
   .newsD {
     font-weight: 500;
-    font-size: 0.9rem;
-    color: #050000;
+    font-size: 1rem; // Updated font size for consistency
+    color: #666; // Updated color for better readability
     text-align: left;
-    word-wrap: break-word; // Ensures long words break to the next line
-    overflow-wrap: break-word; // Ensures the text stays within the container
-    white-space: pre-wrap; // Preserves whitespace and wraps text
-    margin-bottom: 1rem; // Added margin bottom for spacing
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    margin-bottom: 1rem;
   }
 
   .readMore {
@@ -55,7 +70,7 @@
     padding: 0.5rem 1rem;
     font-size: 1rem;
     color: #ffffff;
-    background-color: #79e97b;
+    background-color: #5acb5a; // Updated background color for consistency
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -63,11 +78,29 @@
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-      background-color: #3eca68;
+      background-color: #2fa737;
     }
   }
 }
 
-// .extension {
-//   height: 6rem;
-// }
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
