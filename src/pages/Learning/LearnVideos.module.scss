@@ -8,13 +8,12 @@
   
     h1 {
       text-align: center;
-      font-size: 1.4rem;
+      font-size: 1.4rem; // Updated font size for better visibility
       margin-bottom: 2rem;
-      color: #333;
-      text-transform: uppercase;
-      animation: fadeInDown 1s ease-in-out;
+      font-weight: 600;
+      color: #0b0b0b;
+      animation: fadeInDown 1s ease-in-out; // Added animation for the title
     }
-  
     .videoContainer {
       display: flex;
       flex-direction: column;

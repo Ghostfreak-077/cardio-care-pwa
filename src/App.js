@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
 import Login from './components/Login/Login';
+import Footer from './components/Footer/Footer';
 import Signup from './components/Signup/Signup';
 // import Learning from './pages/Learning/Learning';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -38,9 +39,11 @@ function App() {
             <Route path="/*" element={<Login setLogged={setLogged} />} />
           }
         </Routes>
+        <Footer/>
 
 
       </BrowserRouter>
+      
     </div>
   );
 }
