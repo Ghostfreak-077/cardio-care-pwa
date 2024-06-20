@@ -36,11 +36,11 @@ const SelfSlides = () => {
   }, []);
 
   return (
+    
     <div className={styles.selfSliderWrapper}>
-      <h2 className={styles.heading}>
-        Learn how to operate with our device
-      </h2>
+
       <div className={styles.slider}>
+        
         <div className={styles.slide}>
           <img src={slides[currentIndex].image} alt={`Slide ${currentIndex + 1}`} />
           <p>{slides[currentIndex].description}</p>

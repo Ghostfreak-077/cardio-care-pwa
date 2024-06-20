@@ -20,8 +20,9 @@ const Profile = ({ setLogged }) => {
 
   return (
     <div className={styles.profile}>
+       <h3 className={styles.heading}>User Dashboard</h3>
       <div className={styles.container}>
-        <h3 className={styles.heading}>User Dashboard</h3>
+       
         <div className={styles.user}>
           <img src="/images/user.webp" alt="" className={styles.userimg} />
           <div className={styles.userdetail}>
