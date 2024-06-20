@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import LearnNews from './pages/Learning/LearnNews';
 import LearnBlogs from './pages/Learning/LearnBlogs';
 import LearnVideos from './pages/Learning/LearnVideos';
+import About from './pages/About/About';
 import ApiTest from './components/Signup/ApiTest';
 // import { Notifications } from 'react-push-notification';
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"></link>
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           {!logged ? <>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             {/* <Route path="/dashboard" element={<ApiTest />}/> */}
             <Route path="/dashboard" element={<Profile setLogged={setLogged} />} />
             {/* <Route path="/dashboard" element={<Signup />}/> */}

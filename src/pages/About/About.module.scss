@@ -1,0 +1,138 @@
+.about {
+    text-align: center;
+    padding: 3%;
+    margin-top: 3rem;
+    
+    .logoSection {
+      margin-bottom: 2rem;
+  
+      .logo {
+        width: 170px;
+        margin: 3%;
+        height: auto;
+      }
+    }
+  
+    .section {
+      margin-bottom: 3rem;
+  
+      h2 {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        color: #000000;
+        font-weight: 700;
+        animation: fadeInDown 1s ease-in-out;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: #333333;
+        max-width: 800px;
+        margin: auto;
+        animation: fadeIn 1s ease-in-out;
+      }
+    }
+  
+    .team {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+  
+      .teamMember {
+        background-color: #f5f5f5;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 250px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+  
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+  
+        .teamMemberImage {
+          margin-bottom: 1rem;
+  
+          img {
+            width: 100%;
+            border-radius: 50%;
+            height: auto;
+          }
+        }
+  
+        h3 {
+          font-size: 1.4rem;
+          margin-bottom: 0.5rem;
+        }
+  
+        .socialLinks {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+  
+          a {
+            color: #333333;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+  
+            &:hover {
+              color: #0073b1; // LinkedIn color
+            }
+  
+            &:nth-child(1):hover {
+              color: #000000; // GitHub color
+            }
+          }
+        }
+      }
+    }
+  
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .team {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .section h2 {
+        font-size: 1.5rem;
+      }
+  
+      .section p {
+        font-size: 1.2rem;
+      }
+    }
+  
+    @media (max-width: 420px) {
+      .section h2 {
+        font-size: 1.3rem;
+      }
+  
+      .section p {
+        font-size: 1rem;
+      }
+    }
+  }
+  
