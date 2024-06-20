@@ -8,19 +8,19 @@ const slides = [
   },
   {
     image: '/images/slide2.jpg',
-    description: 'Step 2 : ',
+    description: 'Step 2 : Turn on the hostspot of our Mobile/Laptop Device and click the connect button',
   },
   {
     image: '/images/slide3.jpg',
-    description: 'This is how our device works - Step 3',
+    description: 'Step 3 : Once connected , we can view our Pulse Rate',
   },
   {
     image: '/images/slide4.jpg',
-    description: 'This is how our device works - Step 4',
+    description: 'Step 4 : In case of any emergency , click the Alert Button to send a SOS message to the emergency contacts',
   },
   {
     image: '/images/slide5.jpg',
-    description: 'This is how our device works - Step 5',
+    description: 'Step 5 : Explore the learning pages through daily news , blogs and relevant Videos',
   },
 ];
 
