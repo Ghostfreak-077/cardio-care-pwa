@@ -4,7 +4,7 @@ import styles from './Slider.module.scss';
 const slides = [
   {
     image: '/images/slide1.jpg',
-    description: 'Step 1 : Integrate the Hardware model to our CardioCare App',
+    description: 'Step 1 : Turn on our CardioCare Device ~ "the Hardware Device" ',
   },
   {
     image: '/images/slide2.jpg',
