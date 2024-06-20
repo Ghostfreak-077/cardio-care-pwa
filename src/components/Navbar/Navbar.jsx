@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import { FiHome } from "react-icons/fi";
+import { IoAccessibilityOutline } from "react-icons/io5";
 // import {AiOutlineLineChart} from 'react-icons/ai'
 import { CgProfile, CgNotes } from "react-icons/cg";
 import { Link, useLocation } from "react-router-dom";
@@ -48,6 +49,11 @@ const Navbar = () => {
           <li className={location === "/dashboard" ? styles.sel : ""}>
             <Link to="/dashboard">
               <CgProfile title="Dashboard" />
+            </Link>
+          </li>
+          <li className={location === "/about" ? styles.sel : ""}>
+            <Link to="/about">
+              <IoAccessibilityOutline title="About" />
             </Link>
           </li>
         </ul>
