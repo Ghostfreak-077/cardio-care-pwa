@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/Hero';
 import DataAnalysis from '../../components/DataAnalysis/DataAnalysis';
 import DataAnalysis2 from '../../components/DataAnalysis/DataAnalysis2';
 import Slider from '../../components/Slider/Slider';
+import SelfSlider from '../../components/SelfSlider/SelfSlider';
 import styles from './Home.module.scss';
 
 const Home = () => {
@@ -23,6 +24,8 @@ const Home = () => {
           </div>
           
         </div>
+        <SelfSlider/>
+
         <Slider/>
       </div>
     </div>
