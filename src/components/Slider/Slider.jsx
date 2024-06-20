@@ -8,7 +8,7 @@ const slides = [
   },
   {
     image: '/images/slide2.jpg',
-    description: 'This is how our device works - Step 2',
+    description: 'Step 2 : ',
   },
   {
     image: '/images/slide3.jpg',
