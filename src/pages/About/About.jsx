@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import styles from './About.module.scss';
 import SelfSlidingTechStack from '../../components/SliderTechStack/SliderTechStack';
 
+
 const About = () => {
   return (
     <div className={styles.about}>
@@ -12,13 +13,13 @@ const About = () => {
       <div className={styles.section}>
         <h2>What we do?</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
+        CardioCare integrates seamlessly with our portable wearable device to track pulse rates and oxygen levels. It provides an SOS emergency feature to notify emergency contacts instantly. Additionally, users can learn and explore various health-related topics through our comprehensive pages.
         </p>
       </div>
       <div className={styles.section}>
         <h2>Why us?</h2>
         <p>
-          Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper.
+        We prioritize security and ensure your data is protected. Our user-friendly interface makes learning and exploring health topics easy and enjoyable. Our platform is designed to be intuitive and easy to use, catering to users of all ages.
         </p>
       </div>
       <div className={styles.section}>
@@ -44,7 +45,7 @@ const About = () => {
           </div>
           <div className={styles.teamMember}>
             <div className={styles.teamMemberImage}>
-              <img src="/images/team2.jpg" alt="Team Member" />
+              <img src="/images/Aryadeep.webp" alt="Team Member" />
             </div>
             <h3>Aryadeep Gogoi</h3>
             <div className={styles.socialLinks}>
