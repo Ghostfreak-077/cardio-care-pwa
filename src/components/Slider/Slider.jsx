@@ -4,7 +4,7 @@ import styles from './Slider.module.scss';
 const slides = [
   {
     image: '/images/slide1.jpg',
-    description: 'Step 1 : Turn on our CardioCare Device ~ "the Hardware Device" ',
+    description: 'Step 1 : Turn on our CardioCare Device ~ "the Hardware modular Device" which is an extended part of this project',
   },
   {
     image: '/images/slide2.jpg',
@@ -12,7 +12,7 @@ const slides = [
   },
   {
     image: '/images/slide3.jpg',
-    description: 'Step 3 : Once connected , we can view our Pulse Rate',
+    description: 'Step 3 : Once connected , we can view our Pulse Rate and Oxygen Level in this interface',
   },
   {
     image: '/images/slide4.jpg',

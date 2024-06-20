@@ -4,23 +4,23 @@ import styles from './SelfSlider.module.scss';
 const slides = [
   {
     image: '/images/slide1.jpg',
-    description: 'This is how our device works - Step 1',
+    description: 'Portable and User-Friendly Hardware Device',
   },
   {
     image: '/images/slide2.jpg',
-    description: 'This is how our device works - Step 2',
+    description: 'Intuitive and Engaging User Interface',
   },
   {
     image: '/images/slide3.jpg',
-    description: 'This is how our device works - Step 3',
+    description: 'Emergency? Get Help Instantly!',
   },
   {
     image: '/images/slide4.jpg',
-    description: 'This is how our device works - Step 4',
+    description: 'Discover and Enhance Your Daily Life ',
   },
   {
     image: '/images/slide5.jpg',
-    description: 'This is how our device works - Step 5',
+    description: 'Compile and Connect with Emergency Contacts',
   },
 ];
 
