@@ -31,14 +31,14 @@ const About = () => {
         <div className={styles.team}>
           <div className={styles.teamMember}>
             <div className={styles.teamMemberImage}>
-              <img src="/images/team1.jpg" alt="Team Member" />
+              <img src="/images/partha.webp" alt="Team Member" />
             </div>
             <h3>Partha Pratim Deka</h3>
             <div className={styles.socialLinks}>
-              <a href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Ghostfreak-077/" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </a>
-              <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/partha-pratim-deka-46a406203/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </a>
             </div>
@@ -49,24 +49,24 @@ const About = () => {
             </div>
             <h3>Aryadeep Gogoi</h3>
             <div className={styles.socialLinks}>
-              <a href="https://github.com/janesmith" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Arya-Deep-31" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </a>
-              <a href="https://linkedin.com/in/janesmith" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/aryadeep-gogoi-696609236/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </a>
             </div>
           </div>
           <div className={styles.teamMember}>
             <div className={styles.teamMemberImage}>
-              <img src="/images/team3.jpg" alt="Team Member" />
+              <img src="/images/pragya.webp" alt="Team Member" />
             </div>
             <h3>Pragya Annesha Baruah</h3>
             <div className={styles.socialLinks}>
-              <a href="https://github.com/bobjohnson" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Prag03" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </a>
-              <a href="https://linkedin.com/in/bobjohnson" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/pragya-annesha-baruah-34a043229" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </a>
             </div>

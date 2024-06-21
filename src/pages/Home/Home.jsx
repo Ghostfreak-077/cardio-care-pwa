@@ -5,6 +5,7 @@ import DataAnalysis from '../../components/DataAnalysis/DataAnalysis';
 import DataAnalysis2 from '../../components/DataAnalysis/DataAnalysis2';
 import Slider from '../../components/Slider/Slider';
 import SelfSlider from '../../components/SelfSlider/SelfSlider';
+import Map from '../../components/map/map';
 import styles from './Home.module.scss';
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
         <SelfSlider/>
 
         <Slider/>
+        <Map/>
       </div>
     </div>
   );

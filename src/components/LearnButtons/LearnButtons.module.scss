@@ -1,19 +1,19 @@
 .learn {
-  padding: 5%;
+  padding: 4.6%;
   .learnButtons {
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: row;
-    gap: 5%;
-    padding: 0 3% 6% 3%;
+    gap: 4%;
+    padding: 0 3% 2% 3%;
     button {
       text-decoration: none;
       height: 2rem;
       width: 6rem;
-      border: 0.1rem solid #757575;
+      border: 0.1rem solid #555555;
       border-radius: 1rem;
-      font-size: 1rem;
+      font-size: 0.93rem;
       background-color: transparent;
       .link{
         text-decoration: none;
