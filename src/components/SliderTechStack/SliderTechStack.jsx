@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react';
 import styles from './SliderTechStack.module.scss';
 
 const logos = [
-  { src: '/images/react.png', alt: 'React JS' },
-  { src: '/images/nodejs.png', alt: 'Node JS' },
-  { src: '/images/mongodb.png', alt: 'Mongo DB' },
-  { src: '/images/newsapi.png', alt: 'News API' },
-  { src: '/images/videoapi.png', alt: 'Video API' },
-  { src: '/images/raspberrypi.png', alt: 'Raspberry Pi' },
-  { src: '/images/arduino.png', alt: 'Arduino' },
-  { src: '/images/scss.png', alt: 'SCSS' },
-  { src: '/images/html.png', alt: 'HTML' },
-  { src: '/images/js.png', alt: 'JavaScript' },
-  { src: '/images/github.png', alt: 'GitHub' },
+  { src: '/images/react.webp', alt: 'React JS' },
+  { src: '/images/node.webp', alt: 'Node JS' },
+  { src: '/images/mongo.webp', alt: 'Mongo DB' },
+  { src: '/images/newsapi.webp', alt: 'News API' },
+  { src: '/images/videoapi.webp', alt: 'Video API' },
+  { src: '/images/figma.webp', alt: 'Figma' },
+  { src: '/images/arduino.webp', alt: 'Arduino' },
+  { src: '/images/sass.webp', alt: 'SCSS' },
+  { src: '/images/html.webp', alt: 'HTML' },
+  { src: '/images/jabascript.webp', alt: 'JavaScript' },
+  { src: '/images/github.webp', alt: 'GitHub' },
 ];
 
 const SelfSlidingTechStack = () => {
