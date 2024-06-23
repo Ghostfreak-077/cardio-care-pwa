@@ -117,4 +117,13 @@
       transform: translateY(0);
     }
   }
+
+  .loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    /* Full viewport height */
+  }
 }

@@ -21,7 +21,7 @@
     animation: fadeIn 2s ease-in-out;
     text-align: center;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.892); // Font shadow
-    z-index: 1; // Ensure it's above the circle
+    z-index: 1; 
 
     @media (max-width: 768px) {
       left: auto;
