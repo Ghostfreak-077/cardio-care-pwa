@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './Hero.module.scss';
 import { TbAlertTriangle } from 'react-icons/tb';
+import TypingText from '../TypingText/TypingText';
 
 const Hero = () => {
   useEffect(() => {
@@ -21,14 +22,18 @@ const Hero = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.welcomeMessage}>Welcome to CardioCare</div>
-      <div className={styles.tagline}>Your One Stop Care Tracker</div>
+      <div className={styles.tagline}>" Your One Stop Care~Tracker "</div>
+      
       <div className={styles.emergency}>
         
         <button className={styles.btn}>
           <div className={styles.inner}><TbAlertTriangle /></div>
         </button>
+        
       </div>
+      <TypingText />
     </div>
+    
   );
 };
 
