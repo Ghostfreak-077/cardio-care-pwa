@@ -1,35 +1,31 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const fast2sms = require('fast-two-sms');
+const cors = require('cors');
+const axios = require('axios');
+
 const app = express();
 const port = 5000;
 
-// Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
-// In-memory user data (replace with your database logic)
-let userData = {
+const FAST2SMS_API_KEY = 'tkHkRfCqKWUxu3n17USXJhjUx31X3HHFbEwrKqi9OMpZbpB93dqlhGqMCpWX';
+
+// Mock user data
+const users = {
   user123: {
-    emergencyContact: '9613086017', // Default emergency contact
+    emergencyContact: '9613086017'
   },
+  // Add more users as needed
 };
 
 // Endpoint to get emergency contact
 app.post('/get-emergency-contact', (req, res) => {
   const { userId } = req.body;
-  if (userData[userId]) {
-    res.json({ success: true, emergencyContact: userData[userId].emergencyContact });
-  } else {
-    res.json({ success: false, message: 'User not found' });
-  }
-});
+  const user = users[userId];
 
-// Endpoint to set emergency contact
-app.post('/set-emergency-contact', (req, res) => {
-  const { userId, emergencyContact } = req.body;
-  if (userData[userId]) {
-    userData[userId].emergencyContact = emergencyContact;
-    res.json({ success: true });
+  if (user) {
+    res.json({ success: true, emergencyContact: user.emergencyContact });
   } else {
     res.json({ success: false, message: 'User not found' });
   }
@@ -38,24 +34,28 @@ app.post('/set-emergency-contact', (req, res) => {
 // Endpoint to send SMS
 app.post('/send-sms', async (req, res) => {
   const { userId } = req.body;
-  if (userData[userId]) {
-    const emergencyContact = userData[userId].emergencyContact;
-    try {
-      const response = await fast2sms.sendMessage({
-        authorization: 'gDWhsrLzBym8AiaSkETKqXMIuQoYjlRdUcpZbxCPHVOtFwNn539Nl8Otu7UTvYKcdWjFZrx5RMqHQVbA',
-        message: 'This is an emergency SOS message',
-        numbers: [emergencyContact],
-      });
+  const user = users[userId];
+
+  if (!user) {
+    return res.json({ success: false, message: 'User not found' });
+  }
+
+  const emergencyContact = user.emergencyContact;
+  const message = 'This is an emergency message. Please respond immediately.';
+
+  try {
+    const response = await axios.get(`https://www.fast2sms.com/dev/bulkV2?authorization=${FAST2SMS_API_KEY}&message=${message}&language=english&route=q&numbers=${emergencyContact}`);
+    if (response.data.return) {
       res.json({ success: true });
-    } catch (error) {
-      console.error('Error sending SMS:', error);
-      res.json({ success: false, message: 'Error sending SMS' });
+    } else {
+      res.json({ success: false, message: 'Failed to send SMS' });
     }
-  } else {
-    res.json({ success: false, message: 'User not found' });
+  } catch (error) {
+    console.error('Error sending SMS:', error);
+    res.json({ success: false, message: 'Error sending SMS' });
   }
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });

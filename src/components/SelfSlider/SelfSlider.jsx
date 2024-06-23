@@ -3,23 +3,23 @@ import styles from './SelfSlider.module.scss';
 
 const slides = [
   {
-    image: '/images/slide1.jpg',
+    image: '/images/slide1.webp',
     description: 'Portable and User-Friendly Hardware Device',
   },
   {
-    image: '/images/slide2.jpg',
+    image: '/images/slide2.webp',
     description: 'Intuitive and Engaging User Interface',
   },
   {
-    image: '/images/slide3.jpg',
+    image: '/images/slide3.webp',
     description: 'Emergency? Get Help Instantly!',
   },
   {
-    image: '/images/slide4.jpg',
+    image: '/images/slide4.webp',
     description: 'Discover and Enhance Your Daily Life ',
   },
   {
-    image: '/images/slide5.jpg',
+    image: '/images/slide5.webp',
     description: 'Compile and Connect with Emergency Contacts',
   },
 ];

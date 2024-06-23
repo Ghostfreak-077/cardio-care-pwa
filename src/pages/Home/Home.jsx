@@ -1,4 +1,4 @@
-
+import React, { useState, useEffect } from 'react';
 import Hero from '../../components/Hero/Hero';
 import DataAnalysis from '../../components/DataAnalysis/DataAnalysis';
 import DataAnalysis2 from '../../components/DataAnalysis/DataAnalysis2';
@@ -8,14 +8,11 @@ import Map from '../../components/map/map';
 import styles from './Home.module.scss';
 import axios from 'axios';
 import SOSButton from '../../components/SOSButton/SOSButton';
-import React, { useState, useEffect } from 'react';
-
-
 
 const Home = () => {
   const [emergencyContact, setEmergencyContact] = useState(null);
   const userId = 'user123'; // Replace with actual user ID logic
-  
+
   useEffect(() => {
     const fetchEmergencyContact = async () => {
       try {
@@ -52,11 +49,10 @@ const Home = () => {
     }
   };
 
-
   return (
     <div className={styles.home}>
       <Hero />
-      <SOSButton sendSOS={sendSOS} />
+      <SOSButton userId={userId} sendSOS={sendSOS} />
       <div className={`${styles.nonHero} py-5`}>
         <h1 className='mb-5'>Device Stats</h1>
         <div className={`${styles.charts} container`}>
@@ -68,10 +64,8 @@ const Home = () => {
             <h3>Oxygen Level</h3>
             <DataAnalysis2 />
           </div>
-
         </div>
         <SelfSlider />
-
         <Slider />
         <Map />
       </div>
