@@ -1,98 +1,157 @@
-.emergency {
-  height: 45%;
-  display: flex;
-  
-  .btn {
-    font-size: 1.5rem;
-    font-family: 'Poppins';
-    color: white;
-    width: 14rem;
-    height: 14rem;
-    background: #ff5757;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384),
-    inset 0px 4px 4px rgba(255, 255, 255, 0.37);
-    border-radius: 50%;
-    border-style: none;
-    margin: auto;
-    transform: translateY(-40%);
-    animation: emer forwards 1s ease-in-out infinite alternate;
-  }
-}
-
-.hero{
+.hero {
   background: fixed;
-  background-image: url('../../../public/images/hero_background.webp');
+  background-image: url('../../../public/images/herobackground.webp');
+  opacity: 80%;
+  margin-top: -2rem;
   background-size: cover;
-  // background-position: ;
   position: relative;
-  .text{
-    position: absolute;
-    top: 40%;
-    left: 10rem;
-    font-size: 2rem;
-    line-height: 3rem;
-    text-align-last: left;
-    color: rgb(79, 79, 79);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; // Full viewport height
+  flex-direction: column; // Arrange items vertically
+  overflow: hidden;
 
-    .title{
-      font-size: 5rem;
-      // font-family: cursive !important;
-      color: #ff5757;
+  .welcomeMessage {
+    font-size: 3.6rem; // Increased by 0.6rem
+    font-weight: bold;
+    color: white;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+    text-align: center;
+    text-shadow: 4px 3px 5px rgba(0, 0, 0, 0.903); // Font shadow
+    z-index: 1; // Ensure it's above the circle
+
+    @media (max-width: 768px) {
+      left: auto;
+      font-size: 2.8rem;
+      right: auto;
+      
+    }
+    
+
+    @media (max-width: 430px) {
+      font-size: 2.5rem; // Increased by 0.6rem
     }
   }
+
+  .tagline {
+    font-size: 2rem; // Increased by 0.6rem
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.89); // Font shadow
+    z-index: 1; // Ensure it's above the circle
+
+    @media (max-width: 768px) {
+      left: auto;
+      font-size: 1.7rem;
+      right: auto;
+    }
+
+    @media (max-width: 420px) {
+      font-size: 1.4rem; // Increased by 0.6rem
+    }
+  }
+
+  .emergency {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1; // Ensure it's above the circle
+
+    .btn {
+      font-size: 1.5rem;
+      font-family: 'Poppins';
+      color: white;
+      width: 8rem;
+      height: 8rem;
+      background: #ff5757;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384), inset 0px 4px 4px rgba(255, 255, 255, 0.37);
+      border-radius: 50%;
+      border-style: none;
+      margin-top: 2rem;
+      animation: emer 1s ease-in-out infinite alternate;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .glassCircle {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.connect {
-  font-size: 1.5rem;
-  font-family: 'Poppins';
-  border-radius: 1rem;
-  color: white;
-  width: 14rem;
-  height: 4rem;
-  background: #ff5757;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-  inset 0px 4px 4px rgba(255, 255, 255, 0.37);
-  border-style: none;
-  margin: auto;
-  transform: translateY(-140%);
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes emer {
+  100% {
+    transform: translateY(0.3rem);
+  }
+
+  0% {
+    transform: translateY(0rem);
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+      margin-top: 1rem;
 
-.hero {
-  min-height: 100vh;
 
-  
-  .image {
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../../public/images/hero_background.webp");
-    background-size: cover;
-    
-    
-    .logo {
-      width: 80%;
-      margin: auto;
+
+    .image {
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      background-size: cover;
+
+      .logo {
+        width: 80%;
+        margin: auto;
+      }
     }
   }
-  
-}
 }
 
 @media screen and (min-width: 768px) {
-  .hero{
+  .hero {
     min-height: 100vh;
+    
 
-    .emergency .btn{
+    .emergency .btn {
       position: fixed;
       width: 8rem;
       height: 8rem;
-      bottom: 2rem;
-      right: 2rem;
+      top: 2rem; // Position fixed to the top
+      right: 2rem; // Adjust the right spacing
       display: flex;
 
-      .inner{
+      .inner {
         width: 5rem;
         height: 5rem;
         box-shadow: inset 0rem 0rem 0.5rem rgba(171, 58, 58, 0.3), 0rem 0rem 0.5rem rgba(243, 158, 158, 0.649);
@@ -106,14 +165,5 @@
         color: rgba(255, 255, 255, 0.455);
       }
     }
-  }
-}
-
-@keyframes emer {
-  100%{
-    transform: translateY(0.3rem);
-  }
-  0%{
-    transform: translateY(0rem);
   }
 }

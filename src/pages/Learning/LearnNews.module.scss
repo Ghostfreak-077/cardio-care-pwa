@@ -11,96 +11,110 @@
     color: #0b0b0b;
     animation: fadeInDown 1s ease-in-out; // Added animation for the title
   }
-}
 
-.newsContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  margin-bottom: 4rem;
-  border-radius: 1rem;
-  background-color: #f9f9f9; // Updated background color for consistency
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  animation: slideUp 0.5s ease-in-out; // Added animation for the container
+  .newsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
-  }
+    .newsItem {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      margin-bottom: 4rem;
+      border-radius: 1rem;
+      background-color: #f9f9f9; // Updated background color for consistency
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      animation: slideUp 0.5s ease-in-out; // Added animation for the container
 
-  img {
-    width: 100%;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out; // Added transition for hover effect
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
 
-    &:hover {
-      transform: scale(1.05);
+      img {
+        width: 100%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out; // Added transition for hover effect
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      .newsT {
+        font-weight: 700;
+        font-size: 1.1rem; // Updated font size for better readability
+        color: #333;
+        text-align: left;
+        margin-bottom: 1rem;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: #20a02a;
+        }
+      }
+
+      .newsD {
+        font-weight: 500;
+        font-size: 0.9rem; // Updated font size for consistency
+        color: #666; // Updated color for better readability
+        text-align: left;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        margin-bottom: 1rem;
+      }
+
+      .readMore {
+        align-self: flex-start;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        color: #ffffff;
+        background-color: #5acb5a; // Updated background color for consistency
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #2fa737;
+        }
+      }
     }
   }
 
-  .newsT {
-    font-weight: 700;
-    font-size: 1.1rem; // Updated font size for better readability
-    color: #333;
-    text-align: left;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease-in-out;
-
-    &:hover {
-      color: #20a02a;
+  @media screen and (min-width: 900px) {
+    .newsContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
   }
 
-  .newsD {
-    font-weight: 500;
-    font-size: 0.9rem; // Updated font size for consistency
-    color: #666; // Updated color for better readability
-    text-align: left;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
-    margin-bottom: 1rem;
-  }
-
-  .readMore {
-    align-self: flex-start;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #5acb5a; // Updated background color for consistency
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-
-    &:hover {
-      background-color: #2fa737;
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-}
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

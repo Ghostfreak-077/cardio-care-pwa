@@ -25,27 +25,29 @@ const LearnNews = () => {
       <LearnButtons />
       <h1>Welcome to your daily Cardio News Section</h1>
 
-      {newsData.length > 0 ? (
-        newsData.map((article, index) =>
-          article.urlToImage ? (
-            <div key={index} className={styles.newsContainer}>
-              <img className={styles.newsI} src={article.urlToImage} alt="" />
-              <div className={styles.newsT}>{article.title}</div>
-              <div className={styles.newsD}>{article.description}</div>
-              <a 
-                href={article.url} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.readMore} // Added this for the button
-              >
-                Read More
-              </a>
-            </div>
-          ) : null
-        )
-      ) : (
-        <div>Loading news...</div>
-      )}
+      <div className={styles.newsContainer}>
+        {newsData.length > 0 ? (
+          newsData.map((article, index) =>
+            article.urlToImage ? (
+              <div key={index} className={styles.newsItem}>
+                <img className={styles.newsI} src={article.urlToImage} alt="" />
+                <div className={styles.newsT}>{article.title}</div>
+                <div className={styles.newsD}>{article.description}</div>
+                <a 
+                  href={article.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.readMore}
+                >
+                  Read More
+                </a>
+              </div>
+            ) : null
+          )
+        ) : (
+          <div>Loading news...</div>
+        )}
+      </div>
       {/* <div className={styles.extension}></div> */}
     </div>
   );
