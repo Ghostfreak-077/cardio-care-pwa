@@ -1,87 +1,91 @@
 .blogPage {
   text-align: center;
-  background-color: #ffffff;
   margin: 4rem 0;
-    width: 100%;
-    padding: 0 10%;
+  width: 100%;
+  padding: 0 10%;
 
-  
   h1 {
     text-align: center;
     font-size: 1.4rem; // Updated font size for better visibility
     margin-bottom: 2rem;
     font-weight: 600;
     color: #643939;
-    animation: fadeInDown 1s ease-in-out; 
-
+    animation: fadeInDown 1s ease-in-out;
   }
 
   .blogsContainer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
   }
-  
 
   .blog {
-      background: #fff8f8;
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.132);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: transform 0.3s;
-      max-width: 300px;
-      text-align: left;
+    background: #fff8f8;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.132);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    max-width: 300px;
+    text-align: left;
 
-      &:hover {
-          transform: translateY(-10px);
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .blogImage {
+      width: 100%;
+      padding: 10%;
+    }
+
+    .blogContent {
+      padding: 2rem;
+
+      h2 {
+        font-size: 1.4rem;
+        color: #333;
+        margin: 0.5rem 0;
+        font-weight: 600;
       }
 
-      .blogImage {
-          width: 100%;
-          padding: 10%;
+      p {
+        font-size: 1rem;
+        color: #666;
+        margin: 0.9rem 0;
+        margin-bottom: 1.2rem;
       }
 
-      .blogContent {
-          padding: 2rem;
+      a {
+        align-self: flex-start;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        color: #ffffff;
+        background-color: #5acb5a; // Updated background color for consistency
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
 
-          h2 {
-              font-size: 1.4rem;
-              color: #333;
-              margin: 0.5rem 0;
-              font-weight: 600;
-          }
-
-          p {
-              font-size: 1rem;
-              color: #666;
-              margin: 0.9rem 0;
-              margin-bottom: 1.2rem;
-          }
-
-          a {
-            align-self: flex-start;
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            color: #ffffff;
-            background-color: #5acb5a; // Updated background color for consistency
-            border: none;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease-in-out;
-        
-              &:hover {
-                background-color: #2fa737;
-              }
-          }
+        &:hover {
+          background-color: #2fa737;
+        }
       }
+    }
   }
 
   @media (max-width: 768px) {
-      .blogsContainer {
-          flex-direction: column;
-          align-items: center;
-      }
+    .blogsContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
   }
 }

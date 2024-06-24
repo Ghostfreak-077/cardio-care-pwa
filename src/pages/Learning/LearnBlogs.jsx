@@ -1,6 +1,10 @@
-import React from 'react';
-import styles from './LearnBlogs.module.scss';
+
+
+
+import React, { useState, useEffect } from "react";
 import LearnButtons from '../../components/LearnButtons/LearnButtons';
+import styles from "./LearnBlogs.module.scss";
+import Loader from "../../components/Loader/Loader"; // Import the Loader component
 
 const blogs = [
     {
@@ -76,25 +80,42 @@ const blogs = [
 ];
 
 const LearnBlogs = () => {
-    return (
-        <div className={styles.blogPage}>
-            <LearnButtons />
-            <h1>Welcome to your daily Cardio Blogs Section</h1>
-            <div className={styles.blogsContainer}>
-                {blogs.map((blog, index) => (
-                    <div className={styles.blog} key={index}>
-                        <img src={blog.image} alt={blog.title} className={styles.blogImage} />
-                        <div className={styles.blogContent}>
-                            <h2>{blog.title}</h2>
-                            <p>{blog.date}</p>
-                            <p>{blog.content}</p>
-                            <a href={blog.link} target="_blank" rel="noopener noreferrer">Read more</a>
-                        </div>
-                    </div>
-                ))}
-            </div>
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a network request
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Minimum 2 seconds loader display
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className={styles.blogPage}>
+      <LearnButtons />
+      <h1>Welcome to your daily Cardio Blogs Section</h1>
+      {loading ? (
+        <div className={styles.loaderContainer}>
+          <Loader />
         </div>
-    );
+      ) : (
+        <div className={styles.blogsContainer}>
+          {blogs.map((blog, index) => (
+            <div className={styles.blog} key={index}>
+              <img src={blog.image} alt={blog.title} className={styles.blogImage} />
+              <div className={styles.blogContent}>
+                <h2>{blog.title}</h2>
+                <p>{blog.date}</p>
+                <p>{blog.content}</p>
+                <a href={blog.link} target="_blank" rel="noopener noreferrer">Read more</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default LearnBlogs;

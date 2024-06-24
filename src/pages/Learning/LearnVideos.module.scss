@@ -90,4 +90,11 @@
       gap: 2rem;
     }
   }
+  .loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+  }
 }

@@ -5,16 +5,16 @@ import TypingText from '../TypingText/TypingText';
 import Loader from '../Loader/Loader';
 
 const Hero = () => {
-  const [loading, setLoading] = useState(true); // State to control the loader
+  // const [loading, setLoading] = useState(true); // State to control the loader
 
-  useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+  // useEffect(() => {
+  //   // Simulate loading
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,9 +31,9 @@ const Hero = () => {
     };
   }, []);
 
-  if (loading) {
-    return <Loader />; // Show loader when loading
-  }
+  // if (loading) {
+  //   return <Loader />; // Show loader when loading
+  // }
 
   return (
     <div className={styles.hero}>
