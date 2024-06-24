@@ -1,37 +1,56 @@
-import React from 'react';
+// SosButton.jsx
+import React, { useState } from 'react';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from './SOSButton.module.scss';
 
-const sendEmergencyMessage = async (userId) => {
-  try {
-    const response = await fetch('http://localhost:5000/send-sms', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userId }),
-    });
-    const result = await response.json();
-    if (result.success) {
-      alert('Emergency message sent successfully!');
-    } else {
-      alert(`Failed to send emergency message: ${result.message}`);
-    }
-  } catch (error) {
-    console.error('Error sending emergency message:', error);
-    alert('An error occurred while sending the emergency message.');
-  }
-};
+const SosButton = () => {
+  const [loading, setLoading] = useState(false);
 
-const SOSButton = ({ userId }) => {
-  const handleClick = () => {
-    sendEmergencyMessage(userId);
+  const handleSosClick = async () => {
+    setLoading(true);
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/sos', {
+        message: 'testing cardiocare',
+        location: 'Lankeswar',
+        emergencyContact: '9613086017'
+      });
+
+      if (response.data.success) {
+        toast.success('SOS sent successfully!', {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 8000, // Adjust autoClose duration as needed
+        });
+      } else {
+        toast.error(`Failed to send SOS: ${response.data.message}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 8000,
+        });
+      }
+    } catch (error) {
+      toast.error('Failed to send SOS. Please try again.', {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 8000,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <button className={styles.sosButton} onClick={handleClick}>
-      SOS
-    </button>
+    <div className={styles.sosButtonContainer}>
+      <button
+        className={styles.sosButton}
+        onClick={handleSosClick}
+        disabled={loading}
+      >
+        {loading ? 'Sending..' : 'SOS'}
+      </button>
+      <ToastContainer />
+    </div>
   );
 };
 
-export default SOSButton;
+export default SosButton;

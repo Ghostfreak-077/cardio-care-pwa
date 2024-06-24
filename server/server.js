@@ -1,53 +1,42 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+const corsMiddleware = require('../middleware/corsMiddleware');
 const axios = require('axios');
 
 const app = express();
 const port = 5000;
 
-app.use(cors());
+app.use(corsMiddleware); 
 app.use(bodyParser.json());
 
-const FAST2SMS_API_KEY = 'tkHkRfCqKWUxu3n17USXJhjUx31X3HHFbEwrKqi9OMpZbpB93dqlhGqMCpWX';
-
-// Mock user data
-const users = {
-  user123: {
-    emergencyContact: '9613086017'
-  },
-  // Add more users as needed
-};
-
-// Endpoint to get emergency contact
-app.post('/get-emergency-contact', (req, res) => {
-  const { userId } = req.body;
-  const user = users[userId];
-
-  if (user) {
-    res.json({ success: true, emergencyContact: user.emergencyContact });
-  } else {
-    res.json({ success: false, message: 'User not found' });
-  }
-});
+const FAST2SMS_API_KEY = '1ySgqFytrSCWFetoKqWhBCD9MmwknDXH1SWQgTteaL3FLqPli4JcZM6FZ2tm';
 
 // Endpoint to send SMS
-app.post('/send-sms', async (req, res) => {
-  const { userId } = req.body;
-  const user = users[userId];
+app.post('/api/sos', async (req, res) => {
+  const { message, location, emergencyContact } = req.body;
 
-  if (!user) {
-    return res.json({ success: false, message: 'User not found' });
+  if (!message || !location || !emergencyContact) {
+    return res.json({ success: false, message: 'Missing required fields' });
   }
 
-  const emergencyContact = user.emergencyContact;
-  const message = 'This is an emergency message. Please respond immediately.';
+  const fullMessage = `${message} Location: ${location}`;
 
   try {
-    const response = await axios.get(`https://www.fast2sms.com/dev/bulkV2?authorization=${FAST2SMS_API_KEY}&message=${message}&language=english&route=q&numbers=${emergencyContact}`);
+    const response = await axios.get(`https://www.fast2sms.com/dev/bulkV2`, {
+      params: {
+        authorization: FAST2SMS_API_KEY,
+        message: fullMessage,
+        language: 'english',
+        route: 'q',
+        numbers: emergencyContact
+      }
+    });
+
     if (response.data.return) {
+      console.log('SMS sent successfully:', response.data);
       res.json({ success: true });
     } else {
+      console.error('Failed to send SMS:', response.data);
       res.json({ success: false, message: 'Failed to send SMS' });
     }
   } catch (error) {

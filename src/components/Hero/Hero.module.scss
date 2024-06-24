@@ -13,7 +13,7 @@
   margin-top: -4rem;
 
   .welcomeMessage {
-    font-size: 3.6rem; 
+    font-size: 3.5rem; 
     font-weight: bold;
     color: white;
     margin-top: 12rem;
@@ -24,12 +24,15 @@
     z-index: 1; 
 
     @media (max-width: 768px) {
+      font-size: 3.2rem;
       left: auto;
       right: auto;
+      margin-top: -2rem;
     }
 
     @media (max-width: 420px) {
-      font-size: 2.8rem; 
+      font-size: 2.6rem; 
+      margin-top: -3rem;
     }
   }
 
@@ -44,13 +47,13 @@
     @media (max-width: 768px) {
       left: auto;
       right: auto;
-      font-size: 2.2rem; 
+      font-size: 2rem; 
 
       
     }
 
     @media (max-width: 420px) {
-      font-size: 1.3rem; // Increased by 0.6rem
+      font-size: 1.4rem; // Increased by 0.6rem
     }// Ensure it's above the circle
   }
 
