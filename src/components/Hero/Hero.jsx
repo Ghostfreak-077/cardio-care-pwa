@@ -1,12 +1,11 @@
+// Hero.jsx
 import React, { useEffect } from 'react';
 import styles from './Hero.module.scss';
 import TypingText from '../TypingText/TypingText';
 import SosButton from '../SOSButton/SOSButton';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Hero = () => {
-
   useEffect(() => {
     const handleScroll = () => {
       const heroText = document.getElementById('heroText');
@@ -22,16 +21,12 @@ const Hero = () => {
     };
   }, []);
 
-
   return (
     <div className={styles.hero}>
       <div className={styles.welcomeMessage}>Welcome to CardioCare</div>
       <div className={styles.tagline}>"Your One Stop Care Tracker"</div>
-      
       <div className={styles.emergency}>
-        <SosButton/>
-        <ToastContainer />
-        
+        <SosButton />
       </div>
       <TypingText />
     </div>

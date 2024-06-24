@@ -1,15 +1,15 @@
-// SosButton.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Notification from '../Notification/Notification';
 import styles from './SOSButton.module.scss';
 
 const SosButton = () => {
   const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState(null);
 
   const handleSosClick = async () => {
     setLoading(true);
+    setNotification(null);
 
     try {
       const response = await axios.post('http://localhost:5000/api/sos', {
@@ -19,21 +19,12 @@ const SosButton = () => {
       });
 
       if (response.data.success) {
-        toast.success('SOS sent successfully!', {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 8000, // Adjust autoClose duration as needed
-        });
+        setNotification({ message: 'SOS sent successfully!', type: 'success' });
       } else {
-        toast.error(`Failed to send SOS: ${response.data.message}`, {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 8000,
-        });
+        setNotification({ message: `Failed to send SOS: ${response.data.message}`, type: 'error' });
       }
     } catch (error) {
-      toast.error('Failed to send SOS. Please try again.', {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 8000,
-      });
+      setNotification({ message: 'Failed to send SOS, please try again', type: 'error' });
     } finally {
       setLoading(false);
     }
@@ -41,6 +32,9 @@ const SosButton = () => {
 
   return (
     <div className={styles.sosButtonContainer}>
+      {notification && (
+        <Notification message={notification.message} type={notification.type} />
+      )}
       <button
         className={styles.sosButton}
         onClick={handleSosClick}
@@ -48,7 +42,6 @@ const SosButton = () => {
       >
         {loading ? 'Sending..' : 'SOS'}
       </button>
-      <ToastContainer />
     </div>
   );
 };

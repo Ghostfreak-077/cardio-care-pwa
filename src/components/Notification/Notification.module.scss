@@ -1,0 +1,63 @@
+.notification {
+    position: fixed;
+    top: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.6rem 0.8rem; // Increased padding for a wider notification box
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.3rem;
+    z-index: 300000; 
+    transition: opacity 0.5s ease;
+    background: #606060; 
+    box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.615);
+    display: flex;
+    align-items: center;
+    max-width: 85%; 
+    white-space: nowrap;
+    margin-top: 6rem; 
+    font-weight: 800;
+    
+  
+    &.success {
+      border-left: 15px solid #089e0d;
+      color: #ffffff;
+      background: #42c92a;
+
+    }
+  
+    &.error {
+      border-left: 15px solid #a50101;
+      color: #ffffff;
+      background: #ff0f0f;
+    }
+  
+    &.info {
+      border-left: 15px solid #015192;
+      color: #ffffff;
+      background: #18acfc;
+    }
+  
+    &.warning {
+      border-left: 15px solid #f09000;
+      color: #ffffff;
+      background: #fffb2b;
+    }
+
+   
+  }
+  
+
+  @media (max-width: 768px) {
+    .notification {
+      
+      margin-top: 0rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .notification {
+      
+      font-size: 1rem;
+    }
+  }

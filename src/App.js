@@ -6,8 +6,6 @@ import Login from './components/Login/Login';
 import Footer from './components/Footer/Footer';
 import Signup from './components/Signup/Signup';
 // import Learning from './pages/Learning/Learning';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import LearnNews from './pages/Learning/LearnNews';
@@ -31,7 +29,7 @@ function App() {
       <div className="panel"></div>
       {/* <Notifications/> */}
       <BrowserRouter>
-      <ToastContainer />
+      
         <Navbar />
         <Routes>
           {!logged ? <>
