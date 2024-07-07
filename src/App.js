@@ -13,6 +13,7 @@ import LearnBlogs from './pages/Learning/LearnBlogs';
 import LearnVideos from './pages/Learning/LearnVideos';
 import About from './pages/About/About';
 import ApiTest from './components/Signup/ApiTest';
+import Context from './context/Context';
 // import { Notifications } from 'react-push-notification';
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"></link>
 // index.js or App.js
@@ -23,8 +24,10 @@ import ApiTest from './components/Signup/ApiTest';
 function App() {
 
   const [logged, setLogged] = useState(false)
+  const url = 'http://localhost:1337/admin'
 
   return (
+    <Context.Provider value={url}>
     <div className="App">
       <div className="panel"></div>
       {/* <Notifications/> */}
@@ -52,6 +55,7 @@ function App() {
       </BrowserRouter>
       
     </div>
+    </Context.Provider>
   );
 }
 
