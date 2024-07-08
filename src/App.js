@@ -53,6 +53,7 @@ function App() {
     const jwt = localStorage.getItem("jwt");
     if (!user || jwt) {
       setToken(jwt);
+      console.log(jwt);
     } else {
       console.log("ure not logged into strapi");
 
@@ -81,7 +82,7 @@ function App() {
   }, []);
 
   return (
-    <Context.Provider value={{ url, logged, setLogged, token }}>
+    <Context.Provider value={{ url, logged, setLogged, token, setToken }}>
       <div className="App">
         <div className="panel"></div>
         {/* <Notifications/> */}
