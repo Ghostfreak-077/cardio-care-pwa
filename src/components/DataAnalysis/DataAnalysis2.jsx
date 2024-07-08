@@ -33,7 +33,8 @@ const DataAnalysis = () => {
 
       // fs.writeFile('./data.json', JSON.stringify(data))
 
-      console.log(data[data.length - 1]);
+      // console.log(data[data.length - 1]);
+      
 
       setChartData({
         labels: [...data.slice(data.length - 61, data.length - 1),data[data.length-1]].map((item) => item.second),

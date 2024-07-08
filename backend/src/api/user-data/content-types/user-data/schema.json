@@ -4,7 +4,8 @@
   "info": {
     "singularName": "user-data",
     "pluralName": "user-datas",
-    "displayName": "userData"
+    "displayName": "userData",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,9 +27,6 @@
       "unique": true,
       "required": true
     },
-    "password": {
-      "type": "password"
-    },
     "height": {
       "type": "float",
       "min": 30,
@@ -40,14 +38,15 @@
       "max": 500
     },
     "profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

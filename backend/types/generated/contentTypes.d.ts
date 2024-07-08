@@ -368,6 +368,7 @@ export interface ApiUserDataUserData extends Schema.CollectionType {
     singularName: 'user-data';
     pluralName: 'user-datas';
     displayName: 'userData';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -384,7 +385,6 @@ export interface ApiUserDataUserData extends Schema.CollectionType {
         number
       >;
     email: Attribute.Email & Attribute.Required & Attribute.Unique;
-    password: Attribute.Password;
     height: Attribute.Float &
       Attribute.SetMinMax<
         {
@@ -753,7 +753,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -782,6 +781,28 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    emer_email: Attribute.Email &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 6;
+      }>;
+    height: Attribute.Decimal &
+      Attribute.SetMinMax<
+        {
+          min: 30;
+          max: 250;
+        },
+        number
+      >;
+    weight: Attribute.Decimal &
+      Attribute.SetMinMax<
+        {
+          min: 10;
+          max: 500;
+        },
+        number
+      >;
+    phone: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

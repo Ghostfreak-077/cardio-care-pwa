@@ -9,14 +9,7 @@ const Login = ({setLogged}) => {
 
   const signIn = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-        setLogged(userCredential?true:false)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    
   };
 
   return (
@@ -25,7 +18,7 @@ const Login = ({setLogged}) => {
         <h2>Log In to your Account</h2>
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="Enter your username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         ></input>
