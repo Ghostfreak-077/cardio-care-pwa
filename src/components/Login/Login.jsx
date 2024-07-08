@@ -29,6 +29,7 @@ const Login = ({ setForm }) => {
         localStorage.setItem("jwt", res.data.jwt);
         setToken(res.jwt);
         setForm(true);
+        window.location.reload();
       })
       .catch((e) => {
         console.log(e);

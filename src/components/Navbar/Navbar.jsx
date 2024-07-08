@@ -33,6 +33,7 @@ const Navbar = () => {
         const user = result.user;
         console.log(JSON.stringify(user));
         localStorage.setItem("user", JSON.stringify(user));
+        window.location.reload();
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       })

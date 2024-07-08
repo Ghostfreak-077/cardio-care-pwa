@@ -10,10 +10,18 @@ const Profile = ({ setLogged }) => {
 
   const [location, setLocation] = useState({ latitude: null, longitude: null });
   const [emergencyContact, setEmergencyContact] = useState("");
-  const { logged, token, url } = useContext(Context);
+  const { logged, token, url, setToken } = useContext(Context);
   const [form, setForm] = useState(true);
 
   const [data, setData] = useState({});
+
+  const handleLogout = () => {
+    setLogged(false);
+    setToken(null);
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("user");
+    window.location = '/'
+  };
 
   useEffect(() => {
     //   navigator.geolocation.getCurrentPosition(
@@ -35,16 +43,18 @@ const Profile = ({ setLogged }) => {
     //     .catch(error => console.error('Error fetching emergency contact:', error));
     //   axios.get()
 
-    axios
+    const jwt = localStorage.getItem("jwt");
+
+    if (jwt) {axios
       .get(url + "api/users/me", {
         headers: {
-          Authorization: "bearer " + token,
+          Authorization: "bearer " + jwt,
         },
       })
       .then((res) => {
         console.log(res);
         setData(res?.data);
-      });
+      })}
   }, []);
 
   // const handleEmergencyContactChange = (e) => {
@@ -89,7 +99,7 @@ const Profile = ({ setLogged }) => {
                     alt=""
                     className={styles.locationIcon}
                   />
-                  <div>
+                  <div className="me-auto">
                     {location.latitude
                       ? `${location.latitude}, ${location.longitude}`
                       : "Silchar"}
@@ -134,7 +144,8 @@ const Profile = ({ setLogged }) => {
                     </div>
                     <div className={styles.Details}>
                       <p>Emergency Contact</p>
-                      <input
+                      <div className={styles.p}>{data?.phone}</div>
+                      {/* <input
                         type="text"
                         placeholder={data?.phone}
                         value={emergencyContact}
@@ -149,7 +160,7 @@ const Profile = ({ setLogged }) => {
                         className={styles.saveButton}
                       >
                         Save
-                      </button>
+                      </button> */}
                       <hr />
                     </div>
                   </fieldset>
@@ -175,7 +186,7 @@ const Profile = ({ setLogged }) => {
               {/* <button className={styles.password}>Change Password</button> */}
               <button
                 className={styles.logout}
-                onClick={() => setLogged(false)}
+                onClick={handleLogout}
               >
                 {" "}
                 Log out

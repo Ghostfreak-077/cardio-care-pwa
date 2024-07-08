@@ -67,13 +67,14 @@ function App() {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: "bearer " + strapi_api,
+              "Authorization": "bearer " + strapi_api,
             },
           }
         )
         .then(function (response) {
-          console.log("success", response.jwt);
-          setToken(response.jwt);
+          console.log("success", response.data.jwt);
+          localStorage.setItem("jwt", response.data.jwt);
+          setToken(response.data.jwt);
         })
         .catch(function (error) {
           console.log("user not found, u need to signup");
@@ -89,8 +90,6 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            {logged ? (
-              <>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 {/* <Route path="/dashboard" element={<ApiTest />}/> */}
@@ -103,10 +102,6 @@ function App() {
                 <Route path="/LearnNews" element={<LearnNews />} />
                 <Route path="/LearnBlogs" element={<LearnBlogs />} />
                 <Route path="/LearnVideos" element={<LearnVideos />} />
-              </>
-            ) : (
-              <Route path="/*" element={<Login setLogged={setLogged} />} />
-            )}
           </Routes>
           <Footer />
         </BrowserRouter>
