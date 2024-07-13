@@ -1,6 +1,4 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { auth } from "../../firebase";
 import styles from "./Login.module.scss";
 import Context from "../../context/Context";
 import axios from "axios";

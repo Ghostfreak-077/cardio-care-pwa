@@ -8,6 +8,7 @@ import styles from './map.module.scss';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+// import Notification from '../Notification/Notification';
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -19,14 +20,31 @@ L.Icon.Default.mergeOptions({
 
 const UserLocationMap = () => {
   const [position, setPosition] = useState(null);
+  const [ans, setAns] = useState(null)
 
   useEffect(() => {
+    // // window.print("Abeh location de")
+    // alert("Abeh locaiton de")
+    // navigator.permissions.query({ name: "accelerometer" }).then((result) => {
+    //   if (result.state === "denied") {
+    //     setAns(result.state)
+    //     return;
+    //   }
+    //   // Use the sensor.
+    // });
+    console.log();
+    // navigator.permissions.query({name: "geolocation"}).then((res)=>{setAns(res.state);})
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setPosition([position.coords.latitude, position.coords.longitude]);
+        console.log(position);
       },
       (error) => {
         console.error(error);
+        setAns("there is an error")
+      },
+      {
+        enableHighAccuracy: true
       }
     );
   }, []);
@@ -45,7 +63,10 @@ const UserLocationMap = () => {
           </Marker>
         </MapContainer>
       ) : (
+        <>
         <p>Loading your location...</p>
+        <p>{ans}</p>
+        </>
       )}
     </div>
   );

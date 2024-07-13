@@ -1,30 +1,48 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import Notification from '../Notification/Notification';
-import styles from './SOSButton.module.scss';
+import React, { useState } from "react";
+import axios from "axios";
+import Notification from "../Notification/Notification";
+import styles from "./SOSButton.module.scss";
+// import nodemailer from 'nodemailer'
 
 const SosButton = () => {
   const [loading, setLoading] = useState(false);
   const [notification, setNotification] = useState(null);
 
+  // const transporter = nodemailer.createTransport({
+  //   service: 'gmail',
+  //   auth: {
+  //     user: '',
+  //     pass: 'XXXX_password'
+  //   }
+  // });
+
   const handleSosClick = async () => {
+    // console.log("SOS clicked");
+
     setLoading(true);
     setNotification(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/sos', {
-        message: 'testing cardiocare',
-        location: 'Lankeswar',
-        emergencyContact: '9613086017'
+      const response = await axios.post("http://localhost:5000/api/sos", {
+        message: "testing cardiocare",
+        location: "Lankeswar",
+        emergencyContact: "9613086017",
       });
 
       if (response.data.success) {
-        setNotification({ message: 'SOS sent successfully!', type: 'success' });
+        setNotification({ message: "SOS sent successfully!", type: "success" });
+        console.log("SOS sent");
       } else {
-        setNotification({ message: `Failed to send SOS: ${response.data.message}`, type: 'error' });
+        setNotification({
+          message: `Failed to send SOS: ${response.data.message}`,
+          type: "error",
+        });
       }
     } catch (error) {
-      setNotification({ message: 'Failed to send SOS, please try again', type: 'error' });
+      setNotification({
+        message: "Failed to send SOS, please try again",
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }
@@ -40,7 +58,7 @@ const SosButton = () => {
         onClick={handleSosClick}
         disabled={loading}
       >
-        {loading ? 'Sending..' : 'SOS'}
+        {loading ? "Sending.." : "SOS"}
       </button>
     </div>
   );

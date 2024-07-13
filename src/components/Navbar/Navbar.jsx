@@ -3,22 +3,20 @@ import styles from "./Navbar.module.css";
 import { FiHome } from "react-icons/fi";
 import { IoAccessibilityOutline } from "react-icons/io5";
 // import {AiOutlineLineChart} from 'react-icons/ai'
-import { CgProfile, CgNotes } from "react-icons/cg";
+import { CgNotes } from "react-icons/cg";
 import { Link, useLocation } from "react-router-dom";
 import {
   getAuth,
   signInWithPopup,
-  GoogleAuthProvider,
-  getAdditionalUserInfo,
+  GoogleAuthProvider
 } from "firebase/auth";
-import { Router } from "react-router-dom";
 import Context from "../../context/Context";
 
 const Navbar = () => {
   const location = useLocation().pathname;
   const [deviceId, setDeviceId] = useState();
   const [connected, setConnected] = useState("none");
-  const ip = "172.168.49.20";
+  // const ip = "172.168.49.20";
   const provider = new GoogleAuthProvider();
   const { logged } = useContext(Context);
 
@@ -27,8 +25,6 @@ const Navbar = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
         console.log(JSON.stringify(user));
@@ -41,10 +37,11 @@ const Navbar = () => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
+        console.log(errorCode, errorMessage);
+        // // The email of the user's account used.
+        // const email = error.customData.email;
         // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        // const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
   };
@@ -156,10 +153,10 @@ const Navbar = () => {
           <li className={`${location === "/dashboard" ? `${styles.sel}` :''} ${styles.profile_img} `}>
             {logged ? (
               <Link to="/dashboard">
-                <img src={logged['photoURL']}  title="Dashboard"/>
+                <img src={logged['photoURL']} alt="Profile"  title="Dashboard"/>
               </Link>
             ) : (
-                <img src="/images/profile_silhoutte.png" title="Login" onClick={signIn} />
+                <img src="/images/profile_silhoutte.png" alt="Profile" title="Login" onClick={signIn} />
             )}
           </li>
         </ul>

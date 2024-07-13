@@ -5,11 +5,9 @@ import Context from "../../context/Context";
 import Login from "../../components/Login/Login";
 
 const Profile = ({ setLogged }) => {
-  const weight = 68;
-  const height = 172;
-
-  const [location, setLocation] = useState({ latitude: null, longitude: null });
-  const [emergencyContact, setEmergencyContact] = useState("");
+  
+  // const [location, setLocation] = useState({ latitude: null, longitude: null });
+  // const [emergencyContact, setEmergencyContact] = useState("");
   const { logged, token, url, setToken } = useContext(Context);
   const [form, setForm] = useState(true);
 
@@ -55,13 +53,13 @@ const Profile = ({ setLogged }) => {
         console.log(res);
         setData(res?.data);
       })}
-  }, []);
+  }, [url]);
 
   // const handleEmergencyContactChange = (e) => {
   //   setEmergencyContact(e.target.value);
   // };
 
-  const handleSave = () => {
+  // const handleSave = () => {
     //   const userId = 'user123'; // Replace with actual user ID logic
     //   axios.post('http://localhost:5000/set-emergency-contact', { userId, emergencyContact })
     //     .then(response => {
@@ -72,7 +70,7 @@ const Profile = ({ setLogged }) => {
     //       }
     //     })
     //     .catch(error => console.error('Error updating emergency contact:', error));
-  };
+  // };
 
   return (
     <div className={styles.profile}>
@@ -100,9 +98,10 @@ const Profile = ({ setLogged }) => {
                     className={styles.locationIcon}
                   />
                   <div className="me-auto">
-                    {location.latitude
+                    {/* {location.latitude
                       ? `${location.latitude}, ${location.longitude}`
-                      : "Silchar"}
+                      : "Silchar"} */}
+                      silchar
                   </div>
                 </div>
               </div>

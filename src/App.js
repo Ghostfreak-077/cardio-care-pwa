@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
-import Login from "./components/Login/Login";
+// import Login from "./components/Login/Login";
 import Footer from "./components/Footer/Footer";
-import Signup from "./components/Signup/Signup";
+// import Signup from "./components/Signup/Signup";
 // import Learning from './pages/Learning/Learning';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
@@ -12,10 +12,11 @@ import LearnNews from "./pages/Learning/LearnNews";
 import LearnBlogs from "./pages/Learning/LearnBlogs";
 import LearnVideos from "./pages/Learning/LearnVideos";
 import About from "./pages/About/About";
-import ApiTest from "./components/Signup/ApiTest";
 import Context from "./context/Context";
 import { initializeApp } from "firebase/app";
 import axios from "axios";
+// import { configDotenv } from "dotenv";
+
 // import { Notifications } from 'react-push-notification';
 <link
   href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
@@ -25,25 +26,27 @@ import axios from "axios";
 
 function App() {
   const [logged, setLogged] = useState(false);
-  const url = "http://localhost:1337/";
-  const strapi_api =
-    "2391e0ae9abea91adc185c059f65e74be33e7198fcb99862a81aeb1867f7407e89832737c9d52006c7eb2d8ce5e8d9d78adcfdb6a4ff5e11161a56b7fb3448421cb6af48ab8ac41b9d22424409518bcc1605621c47d2b3b1eadf72423ccfc188fb7e8c71d45390af93143012ca006c5e1dd0f095e09bf432b5ee5c38a21821c6";
+  // const [url, setUrl] = useState(process.env.REACT_APP_SERVER)
+  const url = process.env.REACT_APP_SERVER;
+  const strapi_api = process.env.REACT_APP_STRAPI_API
   const [token, setToken] = useState(null);
 
   const firebaseConfig = {
-    apiKey: "AIzaSyBwnjIYOH5q-cboAl0LAkGO-hotu3tUOVs",
-    authDomain: "cardiocare-2022.firebaseapp.com",
-    projectId: "cardiocare-2022",
-    storageBucket: "cardiocare-2022.appspot.com",
-    messagingSenderId: "916301609182",
-    appId: "1:916301609182:web:580b6552a72d8761ba6a4f",
-    measurementId: "G-N87WT8ELHJ",
+    apiKey: process.env.REACT_APP_FIREBASE_API,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_SENDERID,
+    appId: process.env.REACT_APP_APPID,
+    measurementId: process.env.REACT_APP_MEASUREMENTID,
   };
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+  initializeApp(firebaseConfig);
   // const analytics = getAnalytics(app);
 
   useEffect(() => {
+
+
     const user = localStorage.getItem("user");
     if (user != null) {
       setLogged(JSON.parse(user));
