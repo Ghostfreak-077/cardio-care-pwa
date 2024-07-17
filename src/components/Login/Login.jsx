@@ -10,22 +10,28 @@ const Login = ({ setForm }) => {
   const [emer_number, setEmer_number] = useState("");
   const { url, logged, setToken } = useContext(Context);
 
-  const signIn = (e) => {
+  const signUp = (e) => {
     e.preventDefault();
     axios
-      .post(url + "api/auth/local/register", {
+      .post(url + "api/signup", {
         email: logged["email"],
         username: logged["displayName"],
-        password: logged["uid"],
+        uid: logged["uid"],
         emer_email: emer_email,
         phone: emer_number,
         weight: weight,
         height: height,
-      })
+      },{
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "bearer "
+        },
+      }
+    )
       .then((res) => {
         console.log(res);
         localStorage.setItem("jwt", res.data.jwt);
-        setToken(res.jwt);
+        setToken(res.data.jwt);
         setForm(true);
         window.location.reload();
       })
@@ -36,7 +42,7 @@ const Login = ({ setForm }) => {
 
   return (
     <div className={styles.Logincontainer}>
-      <form onSubmit={signIn}>
+      <form>
         <h2>Enter your details</h2>
         <input
           type="number"
@@ -64,7 +70,7 @@ const Login = ({ setForm }) => {
           value={emer_number}
           onChange={(e) => setEmer_number(e.target.value)}
         ></input>
-        <button type="submit" onClick={signIn}>
+        <button type="submit" onClick={signUp}>
           Submit
         </button>
       </form>

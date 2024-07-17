@@ -5,7 +5,6 @@ import Context from "../../context/Context";
 import Login from "../../components/Login/Login";
 
 const Profile = ({ setLogged }) => {
-  
   // const [location, setLocation] = useState({ latitude: null, longitude: null });
   // const [emergencyContact, setEmergencyContact] = useState("");
   const { logged, token, url, setToken } = useContext(Context);
@@ -18,7 +17,7 @@ const Profile = ({ setLogged }) => {
     setToken(null);
     localStorage.removeItem("jwt");
     localStorage.removeItem("user");
-    window.location = '/'
+    window.location = "/";
   };
 
   useEffect(() => {
@@ -43,33 +42,44 @@ const Profile = ({ setLogged }) => {
 
     const jwt = localStorage.getItem("jwt");
 
-    if (jwt) {axios
-      .get(url + "api/users/me", {
-        headers: {
-          Authorization: "bearer " + jwt,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        setData(res?.data);
-      })}
-  }, [url]);
+    console.log(jwt);
+
+    if (jwt && logged) {
+      axios
+        .post(
+          url + "api/login",
+          {
+            email: logged["email"],
+            uid: logged["uid"],
+          },
+          {
+            headers: {
+              Authorization: "bearer " + jwt,
+            },
+          }
+        )
+        .then((res) => {
+          console.log(res);
+          setData(res?.data.admin);
+        });
+    }
+  }, [url, logged]);
 
   // const handleEmergencyContactChange = (e) => {
   //   setEmergencyContact(e.target.value);
   // };
 
   // const handleSave = () => {
-    //   const userId = 'user123'; // Replace with actual user ID logic
-    //   axios.post('http://localhost:5000/set-emergency-contact', { userId, emergencyContact })
-    //     .then(response => {
-    //       if (response.data.success) {
-    //         alert('Emergency contact updated successfully!');
-    //       } else {
-    //         alert(`Failed to update emergency contact: ${response.data.message}`);
-    //       }
-    //     })
-    //     .catch(error => console.error('Error updating emergency contact:', error));
+  //   const userId = 'user123'; // Replace with actual user ID logic
+  //   axios.post('http://localhost:5000/set-emergency-contact', { userId, emergencyContact })
+  //     .then(response => {
+  //       if (response.data.success) {
+  //         alert('Emergency contact updated successfully!');
+  //       } else {
+  //         alert(`Failed to update emergency contact: ${response.data.message}`);
+  //       }
+  //     })
+  //     .catch(error => console.error('Error updating emergency contact:', error));
   // };
 
   return (
@@ -101,7 +111,7 @@ const Profile = ({ setLogged }) => {
                     {/* {location.latitude
                       ? `${location.latitude}, ${location.longitude}`
                       : "Silchar"} */}
-                      silchar
+                    silchar
                   </div>
                 </div>
               </div>
@@ -129,7 +139,9 @@ const Profile = ({ setLogged }) => {
                   <div className={styles.info}>
                     <img src="/images/BMI.png" alt="" className={styles.icon} />
                     <p>
-                      {Math.round((data?.weight / (data?.height / 100.00) ** 2) * 100) / 100}
+                      {Math.round(
+                        (data?.weight / (data?.height / 100.0) ** 2) * 100
+                      ) / 100}
                     </p>
                   </div>
                 </div>
@@ -183,10 +195,7 @@ const Profile = ({ setLogged }) => {
 
             <div className={styles.profileButtons}>
               {/* <button className={styles.password}>Change Password</button> */}
-              <button
-                className={styles.logout}
-                onClick={handleLogout}
-              >
+              <button className={styles.logout} onClick={handleLogout}>
                 {" "}
                 Log out
               </button>

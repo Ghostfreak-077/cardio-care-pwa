@@ -58,19 +58,18 @@ function App() {
       setToken(jwt);
       console.log(jwt);
     } else {
-      console.log("ure not logged into strapi");
+      console.log("ure not logged into backend");
 
       axios
         .post(
-          url + "api/auth/local",
+          url + "api/get_token",
           {
-            identifier: JSON.parse(user)["email"],
-            password: JSON.parse(user)["uid"],
+            email: JSON.parse(user)["email"],
+            uid: JSON.parse(user)["uid"],
           },
           {
             headers: {
-              "Content-Type": "application/json",
-              "Authorization": "bearer " + strapi_api,
+              "Content-Type": "application/json"
             },
           }
         )
