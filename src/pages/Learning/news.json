@@ -1,0 +1,59 @@
+{
+    "meta": {
+      "found": 516231,
+      "returned": 3,
+      "limit": 3,
+      "page": 1
+    },
+    "data": [
+      {
+        "uuid": "a5f1bef4-769a-4416-9b0b-e8a337133b5a",
+        "title": "Cardio Diagnostics Holdings partners with Navierre for cardiac testing",
+        "description": "The partnership will expand cardiovascular care to areas without specialized infrastructure like CT imaging.",
+        "keywords": "",
+        "snippet": "AI-enabled cardiovascular company Cardio Diagnostics Holdings announced it is partnering with care navigation platform Navierre to make assessing risk and diagn...",
+        "url": "https://www.mobihealthnews.com/news/cardio-diagnostics-holdings-partners-navierre-cardiac-testing",
+        "image_url": "https://www.mobihealthnews.com/sites/default/files/GettyImages-1296345019.jpg",
+        "language": "en",
+        "published_at": "2024-04-05T17:02:18.000000Z",
+        "source": "mobihealthnews.com",
+        "categories": [
+          "health",
+          "tech"
+        ],
+        "relevance_score": 55.954594
+      },
+      {
+        "uuid": "ea9042c5-5bca-416c-ae7b-06b6e485d28e",
+        "title": "Cardio-Hepatic Interaction in Cardiac Amyloidosis",
+        "description": "<span><b>Background:</b> Congestion is associated with poor prognosis in cardiac amyloidosis (CA). The cardio-hepatic interaction and the prognostic impact of s...",
+        "keywords": "pmid:38592299, doi:10.3390/jcm13051440, Sandra Michaela Ihne-Schubert, Oliver Goetze, Andreas Geier, PubMed Abstract, NIH, NLM, NCBI, National Institutes of Health, National Center for Biotechnology Information, National Library of Medicine, MEDLINE",
+        "snippet": "Background: Congestion is associated with poor prognosis in cardiac amyloidosis (CA). The cardio-hepatic interaction and the prognostic impact of secondary live...",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38592299/",
+        "image_url": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "language": "en",
+        "published_at": "2024-04-09T10:00:00.000000Z",
+        "source": "ncbi.nlm.nih.gov",
+        "categories": [
+          "health"
+        ],
+        "relevance_score": 51.08755
+      },
+      {
+        "uuid": "8710457e-1f83-4030-8d19-75149b64a83d",
+        "title": "What’s the difference between cardiac arrest and a heart attack? Know the symptoms",
+        "description": "Patients with cardiac disease and coronary artery disease should seek medical help early and prevent problems before they occur, with lifestyle modification (le...",
+        "keywords": "cardiac arrest and a heart attack difference, difference between cardiac arrest and a heart attack, indianexpress, health specials, cardiac health news, ",
+        "snippet": "Written by Dr M M Yusuf\n\nCardiac arrest and heart attack are two different clinical scenarios but are confusing and unclear to a common man.\n\nCardiac arrest is ...",
+        "url": "https://indianexpress.com/article/lifestyle/health-specials/difference-between-cardiac-arrest-heart-attack-symptoms-8345689/",
+        "image_url": "https://images.indianexpress.com/2022/12/heart-health_200_getty-3.jpg",
+        "language": "en",
+        "published_at": "2022-12-27T01:30:01.000000Z",
+        "source": "indianexpress.com",
+        "categories": [
+          "general"
+        ],
+        "relevance_score": 47.873825
+      }
+    ]
+  }
