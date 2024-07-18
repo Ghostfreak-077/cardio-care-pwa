@@ -23,7 +23,7 @@ const SosButton = () => {
     setNotification(null);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/sos", {
+      const response = await axios.post("https://cardio-care-sos.onrender.com/api/sos", {
         message: "testing cardiocare",
         location: "Lankeswar",
         emergencyContact: "9613086017",
